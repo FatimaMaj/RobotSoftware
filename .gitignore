@@ -3,6 +3,18 @@
 *.ko
 *.obj
 *.elf
+*.cdb
+*.#1
+*.#2
+*.#3
+*.hex
+*.map
+*.mem
+*.asm
+*.lst
+*.rel
+*.rst
+*.sym
 
 # Precompiled Headers
 *.gch
