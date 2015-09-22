@@ -1,0 +1,25 @@
+-muwx
+-i C:\Users\bodel\Documents\GitHub\RobotSoftware\RobotSoftware.hex
+-M
+-Y
+-y
+-b HOME = 0x0000
+-b XSEG = 0x0001
+-b PSEG = 0x0001
+-b ISEG = 0x0000
+-b BSEG = 0x0000
+-k C:\Program Files\SDCC\bin\..\lib\large
+-l mcs51
+-l libsdcc
+-l libint
+-l liblong
+-l libfloat
+C:\Users\bodel\Documents\GitHub\RobotSoftware\Source\main.rel
+C:\Users\bodel\Documents\GitHub\RobotSoftware\Source\globals.rel
+C:\Users\bodel\Documents\GitHub\RobotSoftware\Source\init.rel
+C:\Users\bodel\Documents\GitHub\RobotSoftware\Source\Kinematics.rel
+C:\Users\bodel\Documents\GitHub\RobotSoftware\Source\PositionControl.rel
+C:\Users\bodel\Documents\GitHub\RobotSoftware\Source\RotationalSpeedControl.rel
+C:\Users\bodel\Documents\GitHub\RobotSoftware\Source\TrajectoryControl.rel
+
+-e
