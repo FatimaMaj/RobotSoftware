@@ -1,10 +1,9 @@
-/********************************************************************
- * 						OmniRobot-Software V2.0						*
- *			Original	:	University of Applied Sciences Trier	*
- *			File 		:	main.c									*
- *																	*
- *******************************************************************/
-
+/*!\file        
+ * \brief
+ * 				OmniRobot-Software V2.0
+ *			Original	:	University of Applied Sciences Trier	
+ *			File 		:	main.c	
+ */
 //---Header files----------------------------------------------------
 #include "compiler_defs.h"	//Compiler Definitions i.e. SDCC, Tasking, Keil
 #include "C8051F580_defs.h"	//µC Library for Generic-Toolchain (Compiler)
@@ -65,6 +64,12 @@ void main (void) {
 /********************************************************************/
 }
 
+/*!\brief Interrupt vector 
+ *for the timer2
+ *         
+ *
+ *  Responsible for checking commissioningState 
+ */
 INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	#ifdef NO_AUTO_PAGE_STACK
 	U8 SFRPAGE_save = SFRPAGE;

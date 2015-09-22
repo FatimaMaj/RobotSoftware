@@ -1,0 +1,71 @@
+\hypertarget{main_8c}{}\section{Source/main.c File Reference}
+\label{main_8c}\index{Source/main.\+c@{Source/main.\+c}}
+
+
+\begin{DoxyVerb}    OmniRobot-Software V2.0
+\end{DoxyVerb}
+ Original \+: University of Applied Sciences Trier File \+: \hyperlink{main_8c}{main.\+c}  
+
+
+{\ttfamily \#include \char`\"{}compiler\+\_\+defs.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}C8051\+F580\+\_\+defs.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}float.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Trajectory\+Control.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Position\+Control.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a38810fdf73c43efb8a0c34d33c04a836}{}void {\bfseries Init\+\_\+\+Device} (void)\label{main_8c_a38810fdf73c43efb8a0c34d33c04a836}
+
+\item 
+\hypertarget{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{}void {\bfseries main} (void)\label{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}
+
+\item 
+\hyperlink{main_8c_a0d713b6b654d8a2f28794dd0e5bd3cb9}{I\+N\+T\+E\+R\+R\+U\+P\+T} (Timer2\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R2)
+\begin{DoxyCompactList}\small\item\em Interrupt vector for the timer2. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_ad9ffa2408b82fb8ac9c29d891ddb19f3}{}{\bfseries I\+N\+T\+E\+R\+R\+U\+P\+T} (P\+C\+A0\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+P\+C\+A0)\label{main_8c_ad9ffa2408b82fb8ac9c29d891ddb19f3}
+
+\item 
+\hypertarget{main_8c_a8a76a0a0acf59e585dfb2f05c217ba81}{}{\bfseries I\+N\+T\+E\+R\+R\+U\+P\+T} (A\+D\+C0\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+A\+D\+C0\+\_\+\+E\+O\+C)\label{main_8c_a8a76a0a0acf59e585dfb2f05c217ba81}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a06c6ea20a9d8daebcc1898376066cd13}{}U8 {\bfseries Testbyte} = 0\label{main_8c_a06c6ea20a9d8daebcc1898376066cd13}
+
+\item 
+\hypertarget{main_8c_a04fe89a04ed1996812b8453686a99a0a}{}U8 {\bfseries Commissioning\+State} = S\+P\+I\+\_\+\+T\+E\+S\+T\label{main_8c_a04fe89a04ed1996812b8453686a99a0a}
+
+\item 
+\hypertarget{main_8c_a9782606817d7e2affb65563115d13da0}{}B\+I\+T {\bfseries Button\+State} = F\+A\+L\+S\+E\label{main_8c_a9782606817d7e2affb65563115d13da0}
+
+\item 
+\hypertarget{main_8c_aa0000ea865e04eee87253f7874672c52}{}U8 {\bfseries inputcharacter}\label{main_8c_aa0000ea865e04eee87253f7874672c52}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    OmniRobot-Software V2.0
+\end{DoxyVerb}
+ Original \+: University of Applied Sciences Trier File \+: \hyperlink{main_8c}{main.\+c} 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a0d713b6b654d8a2f28794dd0e5bd3cb9}{}\index{main.\+c@{main.\+c}!I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}}
+\index{I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}!main.\+c@{main.\+c}}
+\subsubsection[{I\+N\+T\+E\+R\+R\+U\+P\+T(\+Timer2\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R2)}]{\setlength{\rightskip}{0pt plus 5cm}I\+N\+T\+E\+R\+R\+U\+P\+T (
+\begin{DoxyParamCaption}
+\item[{Timer2\+\_\+\+I\+S\+R}]{, }
+\item[{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R2}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a0d713b6b654d8a2f28794dd0e5bd3cb9}
+
+
+Interrupt vector for the timer2. 
+
+Responsible for checking commissioning\+State 
