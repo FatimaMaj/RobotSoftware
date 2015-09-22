@@ -2,16 +2,18 @@
 #include <stdio.h>
 
 //---Variables for RotationalSpeedControl----------------------------
-F32 u;
+static F32 u;
 
 F32 ReferenceRotationalSpeed[3];
 F32 MeasuredRotationalSpeed[3];
 
-F32 e[3];
-F32 esum[3];
-F32 Kp[3];
-F32 Ki[3];
+static F32 e[3];
+static F32 esum[3];
+static F32 Kp[3];
+static F32 Ki[3];
 //-------------------------------------------------------------------
+
+
 
 void InitRotationalSpeedControlVariables (void) {
 	U8 i = 0;
