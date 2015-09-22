@@ -79,7 +79,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	//Commissioning FSM
 	switch (CommissioningState) {
 
-		case STOP: {
+		case STOP:
 			ReferenceRotationalSpeed[M1] = 0.0;
 			ReferenceRotationalSpeed[M2] = 0.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -87,9 +87,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M2);
 			RotationalSpeedControl(M3);
 			break;
-		}
-
-		case FORWARD:{//K
+		
+		case FORWARD:
 			ReferenceRotationalSpeed[M1] = -2.0;
 			ReferenceRotationalSpeed[M2] = 2.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -97,8 +96,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M2);
 			RotationalSpeedControl(M3);
 			break;
-		}
-		case ROTATE:{//L
+		
+		case ROTATE:
 			ReferenceRotationalSpeed[M1] = 2.0;
 			ReferenceRotationalSpeed[M2] = 2.0;
 			ReferenceRotationalSpeed[M3] = 2.0;
@@ -106,8 +105,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M2);
 			RotationalSpeedControl(M3);
 			break;
-		}
-		case BACK:{//M
+		
+		case BACK:
 			ReferenceRotationalSpeed[M1] = 2.0;
 			ReferenceRotationalSpeed[M2] = -2.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -115,9 +114,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M2);
 			RotationalSpeedControl(M3);
 			break;
-
-		}
-		case LEFT:{//K
+		
+		case LEFT:
 			ReferenceRotationalSpeed[M1] = -2.0;
 			ReferenceRotationalSpeed[M2] = 0.0;
 			ReferenceRotationalSpeed[M3] = 2.0;
@@ -125,8 +123,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M2);
 			RotationalSpeedControl(M3);
 			break;
-		}
-		case RIGHT:{//K
+		
+		case RIGHT:
 			ReferenceRotationalSpeed[M1] = 2.0;
 			ReferenceRotationalSpeed[M2] = -2.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -134,30 +132,26 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M2);
 			RotationalSpeedControl(M3);
 			break;
-		}
+		
 
-
-/*********************************************************************************************/
-		default: {
+		default: 
 			CommissioningState = SPI_TEST;
-		}
+		
 	}
 	switch (ButtonState) {
-		case FALSE: {
-			if (START) {
+		case FALSE: 
+			if (START)
 				ButtonState = TRUE;
-			}
 			break;
-		}
-		case TRUE: {
-			if (!START) {
+		
+		case TRUE: 
+			if (!START)
 				ButtonState = FALSE;
-			}
 			break;
-		}
-		default: {
+		
+		default: 
 			ButtonState = FALSE;
-		}
+		
 	}
 
 	PrepareNextRotationalSpeedMeasurement();
@@ -170,6 +164,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	SFRPAGE = SFRPAGE_save;
 	#endif
 }
+/**************************************Timer2_ISR_END***************************************/
 
 //---Measure rotational speed of all motors--------------------------
 INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) {
