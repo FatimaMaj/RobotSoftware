@@ -15,6 +15,7 @@
 *.rel
 *.rst
 *.sym
+*.adb
 
 # Precompiled Headers
 *.gch
