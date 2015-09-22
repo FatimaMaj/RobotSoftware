@@ -79,7 +79,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	//Commissioning FSM
 	switch (CommissioningState) {
 
-		case Stop: {
+		case STOP: {
 			ReferenceRotationalSpeed[M1] = 0.0;
 			ReferenceRotationalSpeed[M2] = 0.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -89,7 +89,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			break;
 		}
 
-		case Forward:{//K
+		case FORWARD:{//K
 			ReferenceRotationalSpeed[M1] = -2.0;
 			ReferenceRotationalSpeed[M2] = 2.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -98,16 +98,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M3);
 			break;
 		}
-		case Forward_min:{//K
-			ReferenceRotationalSpeed[M1] = -0.5;
-			ReferenceRotationalSpeed[M2] = 0.5;
-			ReferenceRotationalSpeed[M3] = 0.0;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
-		case Rotate:{//L
+		case ROTATE:{//L
 			ReferenceRotationalSpeed[M1] = 2.0;
 			ReferenceRotationalSpeed[M2] = 2.0;
 			ReferenceRotationalSpeed[M3] = 2.0;
@@ -116,17 +107,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M3);
 			break;
 		}
-		case Rotate_min:{//J
-			ReferenceRotationalSpeed[M1] = 0.5;
-			ReferenceRotationalSpeed[M2] = 0.5;
-			ReferenceRotationalSpeed[M3] = 0.5;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		
-		}
-		case Back:{//M
+		case BACK:{//M
 			ReferenceRotationalSpeed[M1] = 2.0;
 			ReferenceRotationalSpeed[M2] = -2.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -136,17 +117,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			break;
 
 		}
-		case Back_min:{//M
-			ReferenceRotationalSpeed[M1] = 0.5;
-			ReferenceRotationalSpeed[M2] = -0.5;
-			ReferenceRotationalSpeed[M3] = 0.0;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-
-		}
-		case Left:{//K
+		case LEFT:{//K
 			ReferenceRotationalSpeed[M1] = -2.0;
 			ReferenceRotationalSpeed[M2] = 0.0;
 			ReferenceRotationalSpeed[M3] = 2.0;
@@ -155,17 +126,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M3);
 			break;
 		}
-		case Left_min:{//K
-			ReferenceRotationalSpeed[M1] = -0.5;
-			ReferenceRotationalSpeed[M2] = 0.0;
-			ReferenceRotationalSpeed[M3] = 0.5;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
-
-		case Right:{//K
+		case RIGHT:{//K
 			ReferenceRotationalSpeed[M1] = 2.0;
 			ReferenceRotationalSpeed[M2] = -2.0;
 			ReferenceRotationalSpeed[M3] = 0.0;
@@ -174,62 +135,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 			RotationalSpeedControl(M3);
 			break;
 		}
-		case Right_min:{//K
-			ReferenceRotationalSpeed[M1] = 0.5;
-			ReferenceRotationalSpeed[M2] = -0.5;
-			ReferenceRotationalSpeed[M3] = 0.0;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
 
-
-		case Forward_minR:{//c
-			ReferenceRotationalSpeed[M1] = -0.5;
-			ReferenceRotationalSpeed[M2] = -0.5;
-			ReferenceRotationalSpeed[M3] = -0.5;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
-		case Forward_minL:{//v
-			ReferenceRotationalSpeed[M1] = 0.5;
-			ReferenceRotationalSpeed[M2] = 0.5;
-			ReferenceRotationalSpeed[M3] = 0.5;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
-		case Forward_max:{//K
-			ReferenceRotationalSpeed[M1] = -3.0;
-			ReferenceRotationalSpeed[M2] = 3.0;
-			ReferenceRotationalSpeed[M3] = 0.0;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
-		case Forward_maxR:{//z
-			ReferenceRotationalSpeed[M1] = -3.0;
-			ReferenceRotationalSpeed[M2] = -3.0;
-			ReferenceRotationalSpeed[M3] = -3.0;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
-		case Forward_maxL:{//x
-			ReferenceRotationalSpeed[M1] = 3.0;
-			ReferenceRotationalSpeed[M2] = 3.0;
-			ReferenceRotationalSpeed[M3] = 3.0;
-			RotationalSpeedControl(M1);
-			RotationalSpeedControl(M2);
-			RotationalSpeedControl(M3);
-			break;
-		}
 
 /*********************************************************************************************/
 		default: {
@@ -260,7 +166,6 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 		ADC_CHANNEL = CHANNEL_I_MOTOR1;
 		START_AD_CONVERSION;
 	}
-	
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
 	#endif

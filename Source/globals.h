@@ -68,17 +68,19 @@ extern U16	PCA0_Overflow;
 #define CLEAR_POSITION	5
 #define GOTO_POSITION	6
 /********************************************************************
- * 																	*
- *			Date		: 	01.02.2011								*
- *			Author		:	Haydar Al Attar							*
- *			Institution	:	Kristianstad University					*
- *																	*
- *																	*
+ * 																	
+ *			Date		: 	01.02.2011								
+ *			Author		:	Haydar Al Attar							
+ *			Institution	:	Kristianstad University					
+ *
+ *			Updated by	: Christian Bodelsson
+ *			Date		: 	22-09-2012																	
+ *																	
  *******************************************************************/
-#define Forward	7
-#define Right	8
-#define Left	9
-#define Back	10
+#define FORWARD	7
+#define RIGHT	8
+#define LEFT	9
+#define BACK	10
 #define Forward_max	11
 #define Forward_min	12
 
@@ -88,9 +90,9 @@ extern U16	PCA0_Overflow;
 
 #define Forward_maxR	15
 #define Forward_maxL	16
-#define Stop	17
+#define STOP	17
 #define Back_min	18
-#define Rotate	19
+#define ROTATE	19
 #define Rotate_min	20
 #define Left_min	21
 #define Right_min	22

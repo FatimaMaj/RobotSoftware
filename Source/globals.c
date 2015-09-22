@@ -54,10 +54,9 @@ void InitGlobalVariables (void) {
 	//-------------------------------------------------------------------
 
 	//---Variables for motor current and battery voltage measurement-----
-	//for (i=0; i<3; i++) {
-	//	MeasuredMotorCurrent[i] = 0.0;
-	//}
-	memset((void*)MeasuredMotorCurrent,0.0,3);
+	for (i=0; i<3; i++) {
+		MeasuredMotorCurrent[i] = 0.0;
+	}
 
 	MeasuredBatteryVoltage = 0.0;
 	//-------------------------------------------------------------------
