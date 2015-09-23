@@ -11,8 +11,7 @@
 
 #include "globals.h"		//Global Declarations
 #include "float.h"			//Float operations. Only single precision with sdcc. See Manual p.99
-//#include "RotationalSpeedControl.h"
-//#include "Kinematics.h"
+
 #include "TrajectoryControl.h"
 #include "PositionControl.h"
 
@@ -35,8 +34,8 @@ U8 _sdcc_external_startup (void)
 //-------------------------------------------------------------------
 
 typedef enum States{
-	RUNNING,
-	HALT,
+	MOVING,
+	NOT_MOVING,
 	TEST
 
 }States;
@@ -48,29 +47,26 @@ typedef enum Directions{
 	EAST,
 	WEST,
 	SPINN,
-	STILL
+	NONE
 
 }Directions;
+
+
 
 static U8 Testbyte = 0; //for SPI testing
 static U8 CommissioningState = SPI_TEST;
 static BIT ButtonState = FALSE;
 static U8 inputcharacter;                  // Used to store character from UART
 
-static U16 counter; //MAX 65534
+static U16 counter; //MAX 65535
 
 static U16 god;
 
 static States state;
 static Directions direction;
 
-void delay_asm(void){
-__asm
-
-__endasm;
-}
-
-void move(U16 god){
+void Watch_event(U16 god)
+{
 	switch(god){
 	case 100://~3.3s
 		direction = FORWARD;
@@ -78,24 +74,26 @@ void move(U16 god){
 
 	case 1000://~33s
 		direction = ROTATE;
+	break;
 		
 	}
 }
 
 
-void main (void) {	
+void main() 
+{	
 
-	counter = 0;
-	god = 0;
-    state = RUNNING;
-	direction = STILL;
 	InitGlobalVariables();
 	InitRotationalSpeedControlVariables();
 	InitKinematicsVariables();
 	InitTrajectoryControlVariables();
 	InitPositionControlVariables();
-
-
+	
+	counter = 0;
+	god = 0;
+	
+    state = MOVING;
+	direction = NONE;
 	
    	SFRPAGE = ACTIVE_PAGE;              // Change for PCA0MD and SBUF0
   	PCA0MD &= ~0x40;                    // Disable the watchdog timer
@@ -107,59 +105,61 @@ void main (void) {
 	//Should change on timer1 interrupt, with a predefined intervall. 
 	while (1) {
 
-	move(god);
+	Watch_event(god);
 
 		switch(state){
 		
-			case RUNNING:
+			case MOVING:
 		
 				switch(direction){
 					
 					case NORTH:
 						CommissioningState = FORWARD;
 						
-					//TODO
-					break;
+						//TODO
+						break;
 					case SOUTH:
 						CommissioningState = BACK;
 						
-					//TODO
-					break;
+						//TODO
+						break;
 					case WEST:
 						CommissioningState = LEFT;
 						
-					//TODO
-					break;
+						//TODO
+						break;
 					case EAST:
 						CommissioningState = RIGHT;
 						
-					//TODO
-					break;
+						//TODO
+						break;
 					case SPINN:
 						CommissioningState = ROTATE;
 						
-					//TODO
-					break;
-					case STILL:
+						//TODO
+						break;
+					case NONE:
 						CommissioningState = STOP;
 						
-						state = HALT;
-					//TODO
-					break;
+						state = NOT_MOVING;
+						//TODO
+						break;
 
 					default:
 						CommissioningState = STOP;
+					
 
 				}
 				
 			break;
 
-			case HALT:
+			case NOT_MOVING:
 				//TODO
-			break;
+				break;
 
 			default:
-				state = RUNNING;
+				state = NOT_MOVING;
+				break;
 		}
 		
 	}
@@ -173,7 +173,8 @@ void main (void) {
  *  Responsible for changing commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -> 50us per/tick
  *	0xFFFF base10-> 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s 
  */
-INTERRUPT(Timer3_ISR, INTERRUPT_TIMER3) {
+INTERRUPT(Timer3_ISR, INTERRUPT_TIMER3)
+{
 	#ifdef NO_AUTO_PAGE_STACK
 	U8 SFRPAGE_save = SFRPAGE;
 	SFRPAGE = ACTIVE_PAGE;
@@ -208,7 +209,8 @@ INTERRUPT(Timer3_ISR, INTERRUPT_TIMER3) {
  *  Responsible for checking commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -> 50us per/tick
  *	0xFFFF base10-> 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s 
  */
-INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
+INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) 
+{
 	#ifdef NO_AUTO_PAGE_STACK
 	U8 SFRPAGE_save = SFRPAGE;
 	SFRPAGE = ACTIVE_PAGE;
@@ -314,7 +316,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 /**************************************Timer2_ISR_END***************************************/
 
 //---Measure rotational speed of all motors--------------------------
-INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) {
+INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) 
+{
 	#ifdef NO_AUTO_PAGE_STACK
 	U8 SFRPAGE_save = SFRPAGE;
 	SFRPAGE = ACTIVE_PAGE;
@@ -410,7 +413,8 @@ INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) {
 //-------------------------------------------------------------------
 
 //---Measure all motor currents--------------------------------------
-INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
+INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) 
+{
 	#ifdef NO_AUTO_PAGE_STACK
 	U8 SFRPAGE_save = SFRPAGE;
 	SFRPAGE = ACTIVE_PAGE;
@@ -420,7 +424,7 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 	AD0INT = 0;
 
 	switch (ADC_CHANNEL) {
-		case 0x00: {
+		case 0x00: 
 			MeasuredMotorCurrent[0] = (F32)ADC0;
 
 			SPI0DAT = (U8)(ADC0 >> 4);
@@ -428,8 +432,8 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 			ADC_CHANNEL = CHANNEL_I_MOTOR2;
 			AD0BUSY = 1;
 			break;
-		}
-		case 0x01: {
+		
+		case 0x01: 
 			MeasuredMotorCurrent[1] = (F32)ADC0;
 
 			SPI0DAT = (U8)(ADC0 >> 4);
@@ -437,8 +441,8 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 			ADC_CHANNEL = CHANNEL_I_MOTOR3;
 			AD0BUSY = 1;
 			break;
-		}
-		case 0x02: {
+		
+		case 0x02: 
 			MeasuredMotorCurrent[2] = (F32)ADC0;
 
 			SPI0DAT = (U8)(ADC0 >> 4);
@@ -446,18 +450,18 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 			ADC_CHANNEL = CHANNEL_BATTERY_VOLTAGE;
 			AD0BUSY = 1;
 			break;
-		}
-		case 0x03: {
+		
+		case 0x03: 
 			MeasuredBatteryVoltage = (F32)ADC0;
 
 			SPI0DAT = (U8)(ADC0 >> 4);
 
 			ADC_CHANNEL = CHANNEL_I_MOTOR1;
 			break;
-		}
-		default: {
+		
+		default: 
 			ADC_CHANNEL = CHANNEL_I_MOTOR1;
-		}
+		
 	}
 
 	EA = 1;

@@ -16,6 +16,8 @@
 *.rst
 *.sym
 *.adb
+*.lk
+*.omf
 
 # Precompiled Headers
 *.gch

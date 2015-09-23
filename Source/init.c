@@ -33,16 +33,14 @@ void Timer_Init()
     TMR2RLH   = 0xB1;
     TMR2L     = 0xE0;
     TMR2H     = 0xB1;
-}
 
-void Timer_Init3()
-{
-    TMR3CN    = 0x04;
+	TMR3CN    = 0x04;
     TMR3RLL   = 0xE0;
     TMR3RLH   = 0xB1;
     TMR3L     = 0xE0;
     TMR3H     = 0xB1;
 }
+
 
 void SPI_Init()
 {
@@ -145,6 +143,7 @@ void Init_Device(void)
 {
     PCA0_Init();
     Timer_Init();
+
     SPI_Init();
     ADC_Init();
     Voltage_Reference_Init();
