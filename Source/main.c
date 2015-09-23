@@ -48,7 +48,8 @@ typedef enum Directions{
 	EAST,
 	WEST,
 	SPINN,
-	NONE
+	NONE,
+	TEST
 
 }Directions;
 
