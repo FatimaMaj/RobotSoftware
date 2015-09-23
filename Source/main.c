@@ -57,6 +57,10 @@ static U8 CommissioningState = SPI_TEST;
 static BIT ButtonState = FALSE;
 static U8 inputcharacter;                  // Used to store character from UART
 
+static U16 counter; //MAX 65534
+
+static U16 god;
+
 static States state;
 static Directions direction;
 
@@ -66,9 +70,23 @@ __asm
 __endasm;
 }
 
+void move(U16 god){
+	switch(god){
+	case 100://~3.3s
+		direction = FORWARD;
+	break;
+
+	case 1000://~33s
+		direction = ROTATE;
+		
+	}
+}
+
 
 void main (void) {	
 
+	counter = 0;
+	god = 0;
     state = RUNNING;
 	direction = STILL;
 	InitGlobalVariables();
@@ -88,6 +106,8 @@ void main (void) {
 	//TODO
 	//Should change on timer1 interrupt, with a predefined intervall. 
 	while (1) {
+
+	move(god);
 
 		switch(state){
 		
@@ -150,7 +170,8 @@ void main (void) {
  *for the timer3
  *         
  *
- *  Responsible for changing commissioningState
+ *  Responsible for changing commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -> 50us per/tick
+ *	0xFFFF base10-> 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s 
  */
 INTERRUPT(Timer3_ISR, INTERRUPT_TIMER3) {
 	#ifdef NO_AUTO_PAGE_STACK
@@ -160,9 +181,19 @@ INTERRUPT(Timer3_ISR, INTERRUPT_TIMER3) {
 
 	EA = 0;
 	
-	TF3H = 0;
+	TF3H = 0;////*BUGFIX**Booth high and low should be cleared according to the datasheet
 	TF3L = 0;
 
+	if(counter!= 65534){
+		counter++;
+	}else{
+		counter = 0;
+		if(god != 65534){
+			god++;
+		}else{
+			god = 0;
+		}	
+	}
 	EA = 1;
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
@@ -174,7 +205,8 @@ INTERRUPT(Timer3_ISR, INTERRUPT_TIMER3) {
  *for the timer2
  *         
  *
- *  Responsible for checking commissioningState 
+ *  Responsible for checking commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -> 50us per/tick
+ *	0xFFFF base10-> 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s 
  */
 INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	#ifdef NO_AUTO_PAGE_STACK
@@ -184,7 +216,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 
 	EA = 0;
 	
-	TF2H = 0;
+	TF2H = 0;//*BUGFIX**Booth high and low should be cleared according to the datasheet, fixes bug by clearing booth flags instead of just the high flag
 	TF2L = 0;
 
 	GetRotationalSpeeds();
