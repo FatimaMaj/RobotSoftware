@@ -36,7 +36,8 @@ U8 _sdcc_external_startup (void)
 typedef enum States{
 	RUNNING,
 	HALT,
-	STILL
+	STILL,
+	TEST
 
 }States;
 
