@@ -14,36 +14,55 @@
 {\ttfamily \#include \char`\"{}float.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Trajectory\+Control.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Position\+Control.\+h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a3a986df7d9e580103cb569f7d3f0d681}{}typedef enum States {\bfseries States}\label{main_8c_a3a986df7d9e580103cb569f7d3f0d681}
+
+\item 
+\hypertarget{main_8c_a3e9dae94908f3eeab0c48d397b871cc9}{}typedef enum Directions {\bfseries Directions}\label{main_8c_a3e9dae94908f3eeab0c48d397b871cc9}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a808e5cd4979462d3bbe3070d7d147444}{}enum {\bfseries States} \{ {\bfseries M\+O\+V\+I\+N\+G}, 
+{\bfseries N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G}, 
+{\bfseries T\+E\+S\+T}
+ \}\label{main_8c_a808e5cd4979462d3bbe3070d7d147444}
+
+\item 
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}{}enum {\bfseries Directions} \{ \\*
+{\bfseries N\+O\+R\+T\+H}, 
+{\bfseries S\+O\+U\+T\+H}, 
+{\bfseries E\+A\+S\+T}, 
+{\bfseries W\+E\+S\+T}, 
+\\*
+{\bfseries S\+P\+I\+N\+N}, 
+{\bfseries N\+O\+N\+E}
+ \}\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}
+
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{main_8c_a38810fdf73c43efb8a0c34d33c04a836}{}void {\bfseries Init\+\_\+\+Device} (void)\label{main_8c_a38810fdf73c43efb8a0c34d33c04a836}
 
 \item 
-\hypertarget{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{}void {\bfseries main} (void)\label{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}
+\hypertarget{main_8c_aaa297a8cedaafcff261a811a73678843}{}void {\bfseries Watch\+\_\+event} (U16 god)\label{main_8c_aaa297a8cedaafcff261a811a73678843}
 
 \item 
+\hypertarget{main_8c_acdef7a1fd863a6d3770c1268cb06add3}{}void {\bfseries main} ()\label{main_8c_acdef7a1fd863a6d3770c1268cb06add3}
+
+\item 
+\hyperlink{main_8c_aadf6a43f3256dba4b6b35d2fb8681e26}{I\+N\+T\+E\+R\+R\+U\+P\+T} (Timer3\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R3)
+\begin{DoxyCompactList}\small\item\em Interrupt vector for the timer3. \end{DoxyCompactList}\item 
 \hyperlink{main_8c_a0d713b6b654d8a2f28794dd0e5bd3cb9}{I\+N\+T\+E\+R\+R\+U\+P\+T} (Timer2\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R2)
 \begin{DoxyCompactList}\small\item\em Interrupt vector for the timer2. \end{DoxyCompactList}\item 
 \hypertarget{main_8c_ad9ffa2408b82fb8ac9c29d891ddb19f3}{}{\bfseries I\+N\+T\+E\+R\+R\+U\+P\+T} (P\+C\+A0\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+P\+C\+A0)\label{main_8c_ad9ffa2408b82fb8ac9c29d891ddb19f3}
 
 \item 
 \hypertarget{main_8c_a8a76a0a0acf59e585dfb2f05c217ba81}{}{\bfseries I\+N\+T\+E\+R\+R\+U\+P\+T} (A\+D\+C0\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+A\+D\+C0\+\_\+\+E\+O\+C)\label{main_8c_a8a76a0a0acf59e585dfb2f05c217ba81}
-
-\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\hypertarget{main_8c_a06c6ea20a9d8daebcc1898376066cd13}{}U8 {\bfseries Testbyte} = 0\label{main_8c_a06c6ea20a9d8daebcc1898376066cd13}
-
-\item 
-\hypertarget{main_8c_a04fe89a04ed1996812b8453686a99a0a}{}U8 {\bfseries Commissioning\+State} = S\+P\+I\+\_\+\+T\+E\+S\+T\label{main_8c_a04fe89a04ed1996812b8453686a99a0a}
-
-\item 
-\hypertarget{main_8c_a9782606817d7e2affb65563115d13da0}{}B\+I\+T {\bfseries Button\+State} = F\+A\+L\+S\+E\label{main_8c_a9782606817d7e2affb65563115d13da0}
-
-\item 
-\hypertarget{main_8c_aa0000ea865e04eee87253f7874672c52}{}U8 {\bfseries inputcharacter}\label{main_8c_aa0000ea865e04eee87253f7874672c52}
 
 \end{DoxyCompactItemize}
 
@@ -56,7 +75,19 @@
 
 
 \subsection{Function Documentation}
-\hypertarget{main_8c_a0d713b6b654d8a2f28794dd0e5bd3cb9}{}\index{main.\+c@{main.\+c}!I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}}
+\hypertarget{main_8c_aadf6a43f3256dba4b6b35d2fb8681e26}{}\index{main.\+c@{main.\+c}!I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}}
+\index{I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}!main.\+c@{main.\+c}}
+\subsubsection[{I\+N\+T\+E\+R\+R\+U\+P\+T(\+Timer3\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R3)}]{\setlength{\rightskip}{0pt plus 5cm}I\+N\+T\+E\+R\+R\+U\+P\+T (
+\begin{DoxyParamCaption}
+\item[{Timer3\+\_\+\+I\+S\+R}]{, }
+\item[{I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R3}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_aadf6a43f3256dba4b6b35d2fb8681e26}
+
+
+Interrupt vector for the timer3. 
+
+Responsible for changing commissioning\+State, fires every 33ms since (24$\ast$10$^\wedge$6) / 12 = 2\+Mhz and 1/(2$\ast$10$^\wedge$6) = 5$\ast$10$^\wedge$-\/7 -\/$>$ 50us per/tick 0x\+F\+F\+F\+F base10-\/$>$ 65535. Overflow will occure 65535 $\ast$ 5$\ast$10$^\wedge$-\/7 = 0.\+0328s \hypertarget{main_8c_a0d713b6b654d8a2f28794dd0e5bd3cb9}{}\index{main.\+c@{main.\+c}!I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}}
 \index{I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}!main.\+c@{main.\+c}}
 \subsubsection[{I\+N\+T\+E\+R\+R\+U\+P\+T(\+Timer2\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R2)}]{\setlength{\rightskip}{0pt plus 5cm}I\+N\+T\+E\+R\+R\+U\+P\+T (
 \begin{DoxyParamCaption}
@@ -68,4 +99,4 @@
 
 Interrupt vector for the timer2. 
 
-Responsible for checking commissioning\+State 
+Responsible for checking commissioning\+State, fires every 33ms since (24$\ast$10$^\wedge$6) / 12 = 2\+Mhz and 1/(2$\ast$10$^\wedge$6) = 5$\ast$10$^\wedge$-\/7 -\/$>$ 50us per/tick 0x\+F\+F\+F\+F base10-\/$>$ 65535. Overflow will occure 65535 $\ast$ 5$\ast$10$^\wedge$-\/7 = 0.\+0328s 

@@ -86,8 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.c File Reference</div>  </div>
 </div><!--header-->
@@ -104,14 +105,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;TrajectoryControl.h&quot;</code><br />
 <code>#include &quot;PositionControl.h&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3a986df7d9e580103cb569f7d3f0d681"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a986df7d9e580103cb569f7d3f0d681"></a>
+typedef enum States&#160;</td><td class="memItemRight" valign="bottom"><b>States</b></td></tr>
+<tr class="separator:a3a986df7d9e580103cb569f7d3f0d681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e9dae94908f3eeab0c48d397b871cc9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e9dae94908f3eeab0c48d397b871cc9"></a>
+typedef enum Directions&#160;</td><td class="memItemRight" valign="bottom"><b>Directions</b></td></tr>
+<tr class="separator:a3e9dae94908f3eeab0c48d397b871cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a808e5cd4979462d3bbe3070d7d147444"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a808e5cd4979462d3bbe3070d7d147444"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>States</b> { <b>MOVING</b>, 
+<b>NOT_MOVING</b>, 
+<b>TEST</b>
+ }<tr class="separator:a808e5cd4979462d3bbe3070d7d147444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+<tr class="memitem:a04f362029ec2a624fbcb7a30b20ff5f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Directions</b> { <br />
+&#160;&#160;<b>NORTH</b>, 
+<b>SOUTH</b>, 
+<b>EAST</b>, 
+<b>WEST</b>, 
+<br />
+&#160;&#160;<b>SPINN</b>, 
+<b>NONE</b>
+<br />
+ }<tr class="separator:a04f362029ec2a624fbcb7a30b20ff5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a38810fdf73c43efb8a0c34d33c04a836"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38810fdf73c43efb8a0c34d33c04a836"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Init_Device</b> (void)</td></tr>
 <tr class="separator:a38810fdf73c43efb8a0c34d33c04a836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6288eba0f8e8ad3ab1544ad731eb7667"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></tr>
-<tr class="separator:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa297a8cedaafcff261a811a73678843"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa297a8cedaafcff261a811a73678843"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Watch_event</b> (U16 god)</td></tr>
+<tr class="separator:aaa297a8cedaafcff261a811a73678843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdef7a1fd863a6d3770c1268cb06add3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acdef7a1fd863a6d3770c1268cb06add3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
+<tr class="separator:acdef7a1fd863a6d3770c1268cb06add3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf6a43f3256dba4b6b35d2fb8681e26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aadf6a43f3256dba4b6b35d2fb8681e26">INTERRUPT</a> (Timer3_ISR, INTERRUPT_TIMER3)</td></tr>
+<tr class="memdesc:aadf6a43f3256dba4b6b35d2fb8681e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector for the timer3.  <a href="#aadf6a43f3256dba4b6b35d2fb8681e26">More...</a><br /></td></tr>
+<tr class="separator:aadf6a43f3256dba4b6b35d2fb8681e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d713b6b654d8a2f28794dd0e5bd3cb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0d713b6b654d8a2f28794dd0e5bd3cb9">INTERRUPT</a> (Timer2_ISR, INTERRUPT_TIMER2)</td></tr>
 <tr class="memdesc:a0d713b6b654d8a2f28794dd0e5bd3cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector for the timer2.  <a href="#a0d713b6b654d8a2f28794dd0e5bd3cb9">More...</a><br /></td></tr>
 <tr class="separator:a0d713b6b654d8a2f28794dd0e5bd3cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,26 +156,40 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td><
 <tr class="memitem:a8a76a0a0acf59e585dfb2f05c217ba81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a76a0a0acf59e585dfb2f05c217ba81"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>INTERRUPT</b> (ADC0_ISR, INTERRUPT_ADC0_EOC)</td></tr>
 <tr class="separator:a8a76a0a0acf59e585dfb2f05c217ba81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a06c6ea20a9d8daebcc1898376066cd13"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06c6ea20a9d8daebcc1898376066cd13"></a>
-U8&#160;</td><td class="memItemRight" valign="bottom"><b>Testbyte</b> = 0</td></tr>
-<tr class="separator:a06c6ea20a9d8daebcc1898376066cd13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04fe89a04ed1996812b8453686a99a0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04fe89a04ed1996812b8453686a99a0a"></a>
-U8&#160;</td><td class="memItemRight" valign="bottom"><b>CommissioningState</b> = SPI_TEST</td></tr>
-<tr class="separator:a04fe89a04ed1996812b8453686a99a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9782606817d7e2affb65563115d13da0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9782606817d7e2affb65563115d13da0"></a>
-BIT&#160;</td><td class="memItemRight" valign="bottom"><b>ButtonState</b> = FALSE</td></tr>
-<tr class="separator:a9782606817d7e2affb65563115d13da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0000ea865e04eee87253f7874672c52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0000ea865e04eee87253f7874672c52"></a>
-U8&#160;</td><td class="memItemRight" valign="bottom"><b>inputcharacter</b></td></tr>
-<tr class="separator:aa0000ea865e04eee87253f7874672c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">    OmniRobot-Software V2.0
 </pre><p> Original : University of Applied Sciences Trier File : <a class="el" href="main_8c.html" title="    OmniRobot-Software V2.0  Original : University of Applied Sciences Trier File : main...">main.c</a> </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aadf6a43f3256dba4b6b35d2fb8681e26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">INTERRUPT </td>
+          <td>(</td>
+          <td class="paramtype">Timer3_ISR&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">INTERRUPT_TIMER3&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt vector for the timer3. </p>
+<p>Responsible for changing commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -&gt; 50us per/tick 0xFFFF base10-&gt; 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s </p>
+
+</div>
+</div>
 <a class="anchor" id="a0d713b6b654d8a2f28794dd0e5bd3cb9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +215,7 @@ U8&#160;</td><td class="memItemRight" valign="bottom"><b>inputcharacter</b></td>
 </div><div class="memdoc">
 
 <p>Interrupt vector for the timer2. </p>
-<p>Responsible for checking commissioningState </p>
+<p>Responsible for checking commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -&gt; 50us per/tick 0xFFFF base10-&gt; 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s </p>
 
 </div>
 </div>
