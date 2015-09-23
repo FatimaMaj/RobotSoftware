@@ -37,7 +37,6 @@ U8 _sdcc_external_startup (void)
 typedef enum States{
 	RUNNING,
 	HALT,
-	STILL,
 	TEST
 
 }States;
@@ -49,7 +48,7 @@ typedef enum Directions{
 	EAST,
 	WEST,
 	SPINN,
-	NONE
+	STILL
 
 }Directions;
 
@@ -57,17 +56,21 @@ static U8 Testbyte = 0; //for SPI testing
 static U8 CommissioningState = SPI_TEST;
 static BIT ButtonState = FALSE;
 static U8 inputcharacter;                  // Used to store character from UART
-static U16 x;
-static U16 counter;
 
 static States state;
 static Directions direction;
 
+void delay_asm(void){
+__asm
+
+__endasm;
+}
+
+
 void main (void) {	
 
-	state = RUNNING;
-	direction = SPINN;
-
+    state = RUNNING;
+	direction = STILL;
 	InitGlobalVariables();
 	InitRotationalSpeedControlVariables();
 	InitKinematicsVariables();
@@ -75,77 +78,68 @@ void main (void) {
 	InitPositionControlVariables();
 
 
-
+	
    	SFRPAGE = ACTIVE_PAGE;              // Change for PCA0MD and SBUF0
   	PCA0MD &= ~0x40;                    // Disable the watchdog timer
 
-	x = 0;
-	counter = 0;
 	ENABLE = 0;	//Enable H-Bridges
 	NSS4 = 0;	//select SPI slave 4 (C8051F320)
 	LED = 0;	//LED off
 	//TODO
 	//Should change on timer1 interrupt, with a predefined intervall. 
 	while (1) {
-		if(x==35000)
-			counter+=1;
-
-		if(counter == 200){
-			direction = SOUTH;
-			x =0;
-		}else if(counter ==500){
-			direction = NORTH;
-			counter = 0;
-			x =0;
-		}
 
 		switch(state){
+		
 			case RUNNING:
-			x+=1;
-				
-				
-				
+		
 				switch(direction){
 					
 					case NORTH:
 						CommissioningState = FORWARD;
+						
 					//TODO
 					break;
 					case SOUTH:
 						CommissioningState = BACK;
+						
 					//TODO
 					break;
 					case WEST:
 						CommissioningState = LEFT;
+						
 					//TODO
 					break;
 					case EAST:
 						CommissioningState = RIGHT;
+						
 					//TODO
 					break;
 					case SPINN:
 						CommissioningState = ROTATE;
+						
 					//TODO
 					break;
-					case NONE:
+					case STILL:
 						CommissioningState = STOP;
+						
+						state = HALT;
 					//TODO
 					break;
+
 					default:
-					//TODO
-					break;
+						CommissioningState = STOP;
+
 				}
 				
 			break;
 
 			case HALT:
 				//TODO
-				state = STILL;
 			break;
 
-			case STILL:
-				break;
-			
+			default:
+				state = RUNNING;
 		}
 		
 	}
