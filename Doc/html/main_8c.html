@@ -94,8 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><pre class="fragment">    OmniRobot-Software V2.0
-</pre><p> Original : University of Applied Sciences Trier File : <a class="el" href="main_8c.html" title="    OmniRobot-Software V2.0  Original : University of Applied Sciences Trier File : main...">main.c</a>  
+<p>Main function entry point.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;compiler_defs.h&quot;</code><br />
 <code>#include &quot;C8051F580_defs.h&quot;</code><br />
@@ -107,39 +106,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a3a986df7d9e580103cb569f7d3f0d681"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a986df7d9e580103cb569f7d3f0d681"></a>
-typedef enum States&#160;</td><td class="memItemRight" valign="bottom"><b>States</b></td></tr>
-<tr class="separator:a3a986df7d9e580103cb569f7d3f0d681"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e9dae94908f3eeab0c48d397b871cc9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e9dae94908f3eeab0c48d397b871cc9"></a>
-typedef enum Directions&#160;</td><td class="memItemRight" valign="bottom"><b>Directions</b></td></tr>
+typedef enum <a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5">Directions</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Directions</b></td></tr>
 <tr class="separator:a3e9dae94908f3eeab0c48d397b871cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a986df7d9e580103cb569f7d3f0d681"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a986df7d9e580103cb569f7d3f0d681"></a>
+typedef enum <a class="el" href="main_8c.html#a808e5cd4979462d3bbe3070d7d147444">States</a>&#160;</td><td class="memItemRight" valign="bottom"><b>States</b></td></tr>
+<tr class="separator:a3a986df7d9e580103cb569f7d3f0d681"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a808e5cd4979462d3bbe3070d7d147444"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a808e5cd4979462d3bbe3070d7d147444"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>States</b> { <b>MOVING</b>, 
-<b>NOT_MOVING</b>, 
-<b>TEST</b>
- }<tr class="separator:a808e5cd4979462d3bbe3070d7d147444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808e5cd4979462d3bbe3070d7d147444"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a808e5cd4979462d3bbe3070d7d147444">States</a> { <a class="el" href="main_8c.html#a808e5cd4979462d3bbe3070d7d147444a16ebdcb23eb5337fd5bc598fa8d6035d">MOVING</a>, 
+<a class="el" href="main_8c.html#a808e5cd4979462d3bbe3070d7d147444aa0e31f962383837847cb4886c51fd3cf">NOT_MOVING</a>, 
+<a class="el" href="main_8c.html#a808e5cd4979462d3bbe3070d7d147444ab2f0cd22b1963becef8b91d29d567fe8">TEST</a>
+ }<tr class="memdesc:a808e5cd4979462d3bbe3070d7d147444"><td class="mdescLeft">&#160;</td><td class="mdescRight">States.  <a href="main_8c.html#a808e5cd4979462d3bbe3070d7d147444">More...</a><br /></td></tr>
+<tr class="separator:a808e5cd4979462d3bbe3070d7d147444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </td></tr>
-<tr class="memitem:a04f362029ec2a624fbcb7a30b20ff5f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Directions</b> { <br />
-&#160;&#160;<b>NORTH</b>, 
-<b>SOUTH</b>, 
-<b>EAST</b>, 
-<b>WEST</b>, 
+<tr class="memitem:a04f362029ec2a624fbcb7a30b20ff5f5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5">Directions</a> { <br />
+&#160;&#160;<a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5ad0611de6f28d4a9c9eac959f5344698e">NORTH</a>, 
+<a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5a8ef5c0bce69283a9986011a63eea8a6b">SOUTH</a>, 
+<a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5ab5b3793b961949c817c7c0d99c05dad7">EAST</a>, 
+<a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5ae9449e8683a8199dad36b07a63b2f523">WEST</a>, 
 <br />
-&#160;&#160;<b>SPINN</b>, 
-<b>NONE</b>
+&#160;&#160;<a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5a289b871c645334c98939a888aa6b987c">SPINN</a>, 
+<a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>
 <br />
- }<tr class="separator:a04f362029ec2a624fbcb7a30b20ff5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ }<tr class="memdesc:a04f362029ec2a624fbcb7a30b20ff5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directions.  <a href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5">More...</a><br /></td></tr>
+<tr class="separator:a04f362029ec2a624fbcb7a30b20ff5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a38810fdf73c43efb8a0c34d33c04a836"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38810fdf73c43efb8a0c34d33c04a836"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Init_Device</b> (void)</td></tr>
+<tr class="memitem:a38810fdf73c43efb8a0c34d33c04a836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a38810fdf73c43efb8a0c34d33c04a836">Init_Device</a> (void)</td></tr>
 <tr class="separator:a38810fdf73c43efb8a0c34d33c04a836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa297a8cedaafcff261a811a73678843"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa297a8cedaafcff261a811a73678843"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Watch_event</b> (U16 god)</td></tr>
+<tr class="memitem:aaa297a8cedaafcff261a811a73678843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aaa297a8cedaafcff261a811a73678843">Watch_event</a> (U16 god)</td></tr>
+<tr class="memdesc:aaa297a8cedaafcff261a811a73678843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt vector for the timer3.  <a href="#aaa297a8cedaafcff261a811a73678843">More...</a><br /></td></tr>
 <tr class="separator:aaa297a8cedaafcff261a811a73678843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdef7a1fd863a6d3770c1268cb06add3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acdef7a1fd863a6d3770c1268cb06add3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
@@ -158,9 +158,91 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
 <tr class="separator:a8a76a0a0acf59e585dfb2f05c217ba81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">    OmniRobot-Software V2.0
-</pre><p> Original : University of Applied Sciences Trier File : <a class="el" href="main_8c.html" title="    OmniRobot-Software V2.0  Original : University of Applied Sciences Trier File : main...">main.c</a> </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+<div class="textblock"><p>Main function entry point. </p>
+<p>OmniRobot-Software V2.0 Original: University of Applied Sciences Trier </p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8c.html#a04f362029ec2a624fbcb7a30b20ff5f5">Directions</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Directions. </p>
+<p>Directions the robot can take </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5ad0611de6f28d4a9c9eac959f5344698e"></a>NORTH&#160;</td><td class="fielddoc">
+<p>The robot is moving forward. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5a8ef5c0bce69283a9986011a63eea8a6b"></a>SOUTH&#160;</td><td class="fielddoc">
+<p>The robot is moving backwards. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5ab5b3793b961949c817c7c0d99c05dad7"></a>EAST&#160;</td><td class="fielddoc">
+<p>The robot is moving right. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5ae9449e8683a8199dad36b07a63b2f523"></a>WEST&#160;</td><td class="fielddoc">
+<p>The robot is moving left. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5a289b871c645334c98939a888aa6b987c"></a>SPINN&#160;</td><td class="fielddoc">
+<p>The robot is moving in a circle. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a04f362029ec2a624fbcb7a30b20ff5f5ac157bdf0b85a40d2619cbc8bc1ae5fe2"></a>NONE&#160;</td><td class="fielddoc">
+<p>The robot is not moving. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="a808e5cd4979462d3bbe3070d7d147444"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="main_8c.html#a808e5cd4979462d3bbe3070d7d147444">States</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>States. </p>
+<p>States the robot can be in. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a808e5cd4979462d3bbe3070d7d147444a16ebdcb23eb5337fd5bc598fa8d6035d"></a>MOVING&#160;</td><td class="fielddoc">
+<p>The robot is in a moving state. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a808e5cd4979462d3bbe3070d7d147444aa0e31f962383837847cb4886c51fd3cf"></a>NOT_MOVING&#160;</td><td class="fielddoc">
+<p>The robot is in a none moving state. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a808e5cd4979462d3bbe3070d7d147444ab2f0cd22b1963becef8b91d29d567fe8"></a>TEST&#160;</td><td class="fielddoc">
+<p>TEST, not implemented. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a38810fdf73c43efb8a0c34d33c04a836"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Init_Device </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>&lt; Compiler Definitions i.e. SDCC, Tasking, Keil.</p>
+<p>&lt; µC Library for Generic-Toolchain (Compiler).</p>
+<p>&lt; Global Declarations.</p>
+<p>&lt; Float operations. Only single precision with sdcc. See Manual p.99. </p>
+
+</div>
+</div>
 <a class="anchor" id="aadf6a43f3256dba4b6b35d2fb8681e26"></a>
 <div class="memitem">
 <div class="memproto">
@@ -216,6 +298,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
 
 <p>Interrupt vector for the timer2. </p>
 <p>Responsible for checking commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -&gt; 50us per/tick 0xFFFF base10-&gt; 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s </p>
+
+</div>
+</div>
+<a class="anchor" id="aaa297a8cedaafcff261a811a73678843"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Watch_event </td>
+          <td>(</td>
+          <td class="paramtype">U16&#160;</td>
+          <td class="paramname"><em>god</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt vector for the timer3. </p>
+<p>Responsible for changing commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -&gt; 50us per/tick 0xFFFF base10-&gt; 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s </p>
 
 </div>
 </div>

@@ -1,9 +1,9 @@
-/*!\file        
- * \brief
- * 				OmniRobot-Software V2.0
- *			Original	:	University of Applied Sciences Trier	
- *			File 		:	main.c	
+/*! \file Main.c
+    \brief Main function entry point.
+
+	OmniRobot-Software V2.0 Original: University of Applied Sciences Trier	
  */
+
 //---Header files----------------------------------------------------
 #include "compiler_defs.h"	//Compiler Definitions i.e. SDCC, Tasking, Keil
 #include "C8051F580_defs.h"	//µC Library for Generic-Toolchain (Compiler)
@@ -32,25 +32,32 @@ U8 _sdcc_external_startup (void)
 }
 #endif
 //-------------------------------------------------------------------
+//! States
+/*! States the robot can be in. */
 
-typedef enum States{
-	MOVING,
-	NOT_MOVING,
-	TEST
+enum States{
+	MOVING, /*!< The robot is in a moving state. */  
+	NOT_MOVING, /*!< The robot is in a none moving state. */ 
+	TEST /*!< TEST, not implemented. */ 
 
-}States;
+};
 
-typedef enum Directions{
 
-	NORTH,
-	SOUTH,
-	EAST,
-	WEST,
-	SPINN,
-	NONE
+//! Directions
+/*! Directions the robot can take */
+enum Directions{
 
-}Directions;
+	NORTH,	/*!< The robot is moving forward. */  
+	SOUTH,	/*!< The robot is moving backwards. */  
+	EAST,	/*!< The robot is moving right. */  
+	WEST,	/*!< The robot is moving left. */  
+	SPINN,	/*!< The robot is moving in a circle. */  
+	NONE	/*!< The robot is not moving. */  
 
+};
+
+typedef enum Directions Directions;
+typedef enum States States;
 
 
 static U8 Testbyte = 0; //for SPI testing
@@ -58,13 +65,20 @@ static U8 CommissioningState = SPI_TEST;
 static BIT ButtonState = FALSE;
 static U8 inputcharacter;                  // Used to store character from UART
 
-static U16 counter; //MAX 65535
+static U16 counter; //!< MAX 65535
 
-static U16 god;
+static U16 god;		//!< 100 is around 3.3s and 1000 is 33s etc..
 
 static States state;
 static Directions direction;
 
+/*!\brief Interrupt vector 
+ *for the timer3
+ *         
+ *
+ *  Responsible for changing commissioningState, fires every 33ms since (24*10^6) / 12 = 2Mhz and 1/(2*10^6) = 5*10^-7 -> 50us per/tick
+ *	0xFFFF base10-> 65535. Overflow will occure 65535 * 5*10^-7 = 0.0328s 
+ */
 void Watch_event(U16 god)
 {
 	switch(god){

@@ -2,9 +2,7 @@
 \label{main_8c}\index{Source/main.\+c@{Source/main.\+c}}
 
 
-\begin{DoxyVerb}    OmniRobot-Software V2.0
-\end{DoxyVerb}
- Original \+: University of Applied Sciences Trier File \+: \hyperlink{main_8c}{main.\+c}  
+Main function entry point.  
 
 
 {\ttfamily \#include \char`\"{}compiler\+\_\+defs.\+h\char`\"{}}\\*
@@ -17,41 +15,37 @@
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{main_8c_a3a986df7d9e580103cb569f7d3f0d681}{}typedef enum States {\bfseries States}\label{main_8c_a3a986df7d9e580103cb569f7d3f0d681}
+\hypertarget{main_8c_a3e9dae94908f3eeab0c48d397b871cc9}{}typedef enum \hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}{Directions} {\bfseries Directions}\label{main_8c_a3e9dae94908f3eeab0c48d397b871cc9}
 
 \item 
-\hypertarget{main_8c_a3e9dae94908f3eeab0c48d397b871cc9}{}typedef enum Directions {\bfseries Directions}\label{main_8c_a3e9dae94908f3eeab0c48d397b871cc9}
+\hypertarget{main_8c_a3a986df7d9e580103cb569f7d3f0d681}{}typedef enum \hyperlink{main_8c_a808e5cd4979462d3bbe3070d7d147444}{States} {\bfseries States}\label{main_8c_a3a986df7d9e580103cb569f7d3f0d681}
 
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{main_8c_a808e5cd4979462d3bbe3070d7d147444}{}enum {\bfseries States} \{ {\bfseries M\+O\+V\+I\+N\+G}, 
-{\bfseries N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G}, 
-{\bfseries T\+E\+S\+T}
- \}\label{main_8c_a808e5cd4979462d3bbe3070d7d147444}
-
+enum \hyperlink{main_8c_a808e5cd4979462d3bbe3070d7d147444}{States} \{ \hyperlink{main_8c_a808e5cd4979462d3bbe3070d7d147444a16ebdcb23eb5337fd5bc598fa8d6035d}{M\+O\+V\+I\+N\+G}, 
+\hyperlink{main_8c_a808e5cd4979462d3bbe3070d7d147444aa0e31f962383837847cb4886c51fd3cf}{N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G}, 
+\hyperlink{main_8c_a808e5cd4979462d3bbe3070d7d147444ab2f0cd22b1963becef8b91d29d567fe8}{T\+E\+S\+T}
+ \}\begin{DoxyCompactList}\small\item\em States. \end{DoxyCompactList}
 \item 
-\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}{}enum {\bfseries Directions} \{ \\*
-{\bfseries N\+O\+R\+T\+H}, 
-{\bfseries S\+O\+U\+T\+H}, 
-{\bfseries E\+A\+S\+T}, 
-{\bfseries W\+E\+S\+T}, 
+enum \hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}{Directions} \{ \\*
+\hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ad0611de6f28d4a9c9eac959f5344698e}{N\+O\+R\+T\+H}, 
+\hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5a8ef5c0bce69283a9986011a63eea8a6b}{S\+O\+U\+T\+H}, 
+\hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ab5b3793b961949c817c7c0d99c05dad7}{E\+A\+S\+T}, 
+\hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ae9449e8683a8199dad36b07a63b2f523}{W\+E\+S\+T}, 
 \\*
-{\bfseries S\+P\+I\+N\+N}, 
-{\bfseries N\+O\+N\+E}
- \}\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}
-
+\hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5a289b871c645334c98939a888aa6b987c}{S\+P\+I\+N\+N}, 
+\hyperlink{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ac157bdf0b85a40d2619cbc8bc1ae5fe2}{N\+O\+N\+E}
+ \}\begin{DoxyCompactList}\small\item\em Directions. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{main_8c_a38810fdf73c43efb8a0c34d33c04a836}{}void {\bfseries Init\+\_\+\+Device} (void)\label{main_8c_a38810fdf73c43efb8a0c34d33c04a836}
-
+void \hyperlink{main_8c_a38810fdf73c43efb8a0c34d33c04a836}{Init\+\_\+\+Device} (void)
 \item 
-\hypertarget{main_8c_aaa297a8cedaafcff261a811a73678843}{}void {\bfseries Watch\+\_\+event} (U16 god)\label{main_8c_aaa297a8cedaafcff261a811a73678843}
-
-\item 
+void \hyperlink{main_8c_aaa297a8cedaafcff261a811a73678843}{Watch\+\_\+event} (U16 god)
+\begin{DoxyCompactList}\small\item\em Interrupt vector for the timer3. \end{DoxyCompactList}\item 
 \hypertarget{main_8c_acdef7a1fd863a6d3770c1268cb06add3}{}void {\bfseries main} ()\label{main_8c_acdef7a1fd863a6d3770c1268cb06add3}
 
 \item 
@@ -68,14 +62,70 @@
 
 
 \subsection{Detailed Description}
-\begin{DoxyVerb}    OmniRobot-Software V2.0
-\end{DoxyVerb}
- Original \+: University of Applied Sciences Trier File \+: \hyperlink{main_8c}{main.\+c} 
+Main function entry point. 
 
+Omni\+Robot-\/\+Software V2.\+0 Original\+: University of Applied Sciences Trier 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}{}\index{main.\+c@{main.\+c}!Directions@{Directions}}
+\index{Directions@{Directions}!main.\+c@{main.\+c}}
+\subsubsection[{Directions}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Directions}}\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5}
+
+
+Directions. 
+
+Directions the robot can take \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+O\+R\+T\+H@{N\+O\+R\+T\+H}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!N\+O\+R\+T\+H@{N\+O\+R\+T\+H}}\item[{\em 
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ad0611de6f28d4a9c9eac959f5344698e}{}N\+O\+R\+T\+H\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ad0611de6f28d4a9c9eac959f5344698e}
+}]The robot is moving forward. \index{S\+O\+U\+T\+H@{S\+O\+U\+T\+H}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!S\+O\+U\+T\+H@{S\+O\+U\+T\+H}}\item[{\em 
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5a8ef5c0bce69283a9986011a63eea8a6b}{}S\+O\+U\+T\+H\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5a8ef5c0bce69283a9986011a63eea8a6b}
+}]The robot is moving backwards. \index{E\+A\+S\+T@{E\+A\+S\+T}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!E\+A\+S\+T@{E\+A\+S\+T}}\item[{\em 
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ab5b3793b961949c817c7c0d99c05dad7}{}E\+A\+S\+T\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ab5b3793b961949c817c7c0d99c05dad7}
+}]The robot is moving right. \index{W\+E\+S\+T@{W\+E\+S\+T}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!W\+E\+S\+T@{W\+E\+S\+T}}\item[{\em 
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ae9449e8683a8199dad36b07a63b2f523}{}W\+E\+S\+T\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ae9449e8683a8199dad36b07a63b2f523}
+}]The robot is moving left. \index{S\+P\+I\+N\+N@{S\+P\+I\+N\+N}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!S\+P\+I\+N\+N@{S\+P\+I\+N\+N}}\item[{\em 
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5a289b871c645334c98939a888aa6b987c}{}S\+P\+I\+N\+N\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5a289b871c645334c98939a888aa6b987c}
+}]The robot is moving in a circle. \index{N\+O\+N\+E@{N\+O\+N\+E}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!N\+O\+N\+E@{N\+O\+N\+E}}\item[{\em 
+\hypertarget{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ac157bdf0b85a40d2619cbc8bc1ae5fe2}{}N\+O\+N\+E\label{main_8c_a04f362029ec2a624fbcb7a30b20ff5f5ac157bdf0b85a40d2619cbc8bc1ae5fe2}
+}]The robot is not moving. \end{description}
+\end{Desc}
+\hypertarget{main_8c_a808e5cd4979462d3bbe3070d7d147444}{}\index{main.\+c@{main.\+c}!States@{States}}
+\index{States@{States}!main.\+c@{main.\+c}}
+\subsubsection[{States}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf States}}\label{main_8c_a808e5cd4979462d3bbe3070d7d147444}
+
+
+States. 
+
+States the robot can be in. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+O\+V\+I\+N\+G@{M\+O\+V\+I\+N\+G}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!M\+O\+V\+I\+N\+G@{M\+O\+V\+I\+N\+G}}\item[{\em 
+\hypertarget{main_8c_a808e5cd4979462d3bbe3070d7d147444a16ebdcb23eb5337fd5bc598fa8d6035d}{}M\+O\+V\+I\+N\+G\label{main_8c_a808e5cd4979462d3bbe3070d7d147444a16ebdcb23eb5337fd5bc598fa8d6035d}
+}]The robot is in a moving state. \index{N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G@{N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G@{N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G}}\item[{\em 
+\hypertarget{main_8c_a808e5cd4979462d3bbe3070d7d147444aa0e31f962383837847cb4886c51fd3cf}{}N\+O\+T\+\_\+\+M\+O\+V\+I\+N\+G\label{main_8c_a808e5cd4979462d3bbe3070d7d147444aa0e31f962383837847cb4886c51fd3cf}
+}]The robot is in a none moving state. \index{T\+E\+S\+T@{T\+E\+S\+T}!main.\+c@{main.\+c}}\index{main.\+c@{main.\+c}!T\+E\+S\+T@{T\+E\+S\+T}}\item[{\em 
+\hypertarget{main_8c_a808e5cd4979462d3bbe3070d7d147444ab2f0cd22b1963becef8b91d29d567fe8}{}T\+E\+S\+T\label{main_8c_a808e5cd4979462d3bbe3070d7d147444ab2f0cd22b1963becef8b91d29d567fe8}
+}]T\+E\+S\+T, not implemented. \end{description}
+\end{Desc}
 
 
 \subsection{Function Documentation}
-\hypertarget{main_8c_aadf6a43f3256dba4b6b35d2fb8681e26}{}\index{main.\+c@{main.\+c}!I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}}
+\hypertarget{main_8c_a38810fdf73c43efb8a0c34d33c04a836}{}\index{main.\+c@{main.\+c}!Init\+\_\+\+Device@{Init\+\_\+\+Device}}
+\index{Init\+\_\+\+Device@{Init\+\_\+\+Device}!main.\+c@{main.\+c}}
+\subsubsection[{Init\+\_\+\+Device(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Init\+\_\+\+Device (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a38810fdf73c43efb8a0c34d33c04a836}
+$<$ Compiler Definitions i.\+e. S\+D\+C\+C, Tasking, Keil.
+
+$<$ µ\+C Library for Generic-\/\+Toolchain (Compiler).
+
+$<$ Global Declarations.
+
+$<$ Float operations. Only single precision with sdcc. See Manual p.\+99. \hypertarget{main_8c_aadf6a43f3256dba4b6b35d2fb8681e26}{}\index{main.\+c@{main.\+c}!I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}}
 \index{I\+N\+T\+E\+R\+R\+U\+P\+T@{I\+N\+T\+E\+R\+R\+U\+P\+T}!main.\+c@{main.\+c}}
 \subsubsection[{I\+N\+T\+E\+R\+R\+U\+P\+T(\+Timer3\+\_\+\+I\+S\+R, I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+T\+I\+M\+E\+R3)}]{\setlength{\rightskip}{0pt plus 5cm}I\+N\+T\+E\+R\+R\+U\+P\+T (
 \begin{DoxyParamCaption}
@@ -99,4 +149,15 @@ Responsible for changing commissioning\+State, fires every 33ms since (24$\ast$1
 
 Interrupt vector for the timer2. 
 
-Responsible for checking commissioning\+State, fires every 33ms since (24$\ast$10$^\wedge$6) / 12 = 2\+Mhz and 1/(2$\ast$10$^\wedge$6) = 5$\ast$10$^\wedge$-\/7 -\/$>$ 50us per/tick 0x\+F\+F\+F\+F base10-\/$>$ 65535. Overflow will occure 65535 $\ast$ 5$\ast$10$^\wedge$-\/7 = 0.\+0328s 
+Responsible for checking commissioning\+State, fires every 33ms since (24$\ast$10$^\wedge$6) / 12 = 2\+Mhz and 1/(2$\ast$10$^\wedge$6) = 5$\ast$10$^\wedge$-\/7 -\/$>$ 50us per/tick 0x\+F\+F\+F\+F base10-\/$>$ 65535. Overflow will occure 65535 $\ast$ 5$\ast$10$^\wedge$-\/7 = 0.\+0328s \hypertarget{main_8c_aaa297a8cedaafcff261a811a73678843}{}\index{main.\+c@{main.\+c}!Watch\+\_\+event@{Watch\+\_\+event}}
+\index{Watch\+\_\+event@{Watch\+\_\+event}!main.\+c@{main.\+c}}
+\subsubsection[{Watch\+\_\+event(\+U16 god)}]{\setlength{\rightskip}{0pt plus 5cm}void Watch\+\_\+event (
+\begin{DoxyParamCaption}
+\item[{U16}]{god}
+\end{DoxyParamCaption}
+)}\label{main_8c_aaa297a8cedaafcff261a811a73678843}
+
+
+Interrupt vector for the timer3. 
+
+Responsible for changing commissioning\+State, fires every 33ms since (24$\ast$10$^\wedge$6) / 12 = 2\+Mhz and 1/(2$\ast$10$^\wedge$6) = 5$\ast$10$^\wedge$-\/7 -\/$>$ 50us per/tick 0x\+F\+F\+F\+F base10-\/$>$ 65535. Overflow will occure 65535 $\ast$ 5$\ast$10$^\wedge$-\/7 = 0.\+0328s 
