@@ -405,6 +405,7 @@ SFR16 (CAN0IF2DB2, 0xFE);              // IF2 Data B 2
 #define SFR_ADC0CN   0xE8
 #define SFR_B        0xF0
 #define SFR_SPI0CN   0xF8
+#define SFR_TMR3CN   0x91
 
 //-----------------------------------------------------------------------------
 // Bit Definitions
@@ -479,6 +480,16 @@ SBIT (T2SPLIT, SFR_TMR2CN, 3);         // Timer 2 Split-Mode Enable
 SBIT (TR2, SFR_TMR2CN, 2);             // Timer 2 Run Enable
 SBIT (T2RCLK, SFR_TMR2CN, 1);          // Timer 2 Xclk/Rclk Select
 SBIT (T2XCLK, SFR_TMR2CN, 0);          // Timer 2 Clk/8 Clock Source
+
+// TMR3CN 0x91
+SBIT (TF3H, SFR_TMR3CN, 7);            // Timer 2 High-Byte Overflow Flag
+SBIT (TF3L, SFR_TMR3CN, 6);            // Timer 2 Low-Byte  Overflow Flag
+SBIT (TF3LEN, SFR_TMR3CN, 5);          // Timer 2 Low-Byte Flag Enable
+SBIT (TF3CEN, SFR_TMR3CN, 4);          // Timer 2 Capture Enable
+SBIT (T3SPLIT, SFR_TMR3CN, 3);         // Timer 2 Split-Mode Enable
+SBIT (TR3, SFR_TMR3CN, 2);             // Timer 2 Run Enable
+SBIT (T3RCLK, SFR_TMR3CN, 1);          // Timer 2 Xclk/Rclk Select
+SBIT (T3XCLK, SFR_TMR3CN, 0);          // Timer 2 Clk/8 Clock Source
 
 // TMR4CN 0xC8
 SBIT (TF4, SFR_TMR4CN, 7);             // Timer 4 Overflow/Underflow Flag

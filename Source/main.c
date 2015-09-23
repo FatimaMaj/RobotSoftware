@@ -147,6 +147,30 @@ void main (void) {
 }
 
 /*!\brief Interrupt vector 
+ *for the timer3
+ *         
+ *
+ *  Responsible for changing commissioningState
+ */
+INTERRUPT(Timer3_ISR, INTERRUPT_TIMER3) {
+	#ifdef NO_AUTO_PAGE_STACK
+	U8 SFRPAGE_save = SFRPAGE;
+	SFRPAGE = ACTIVE_PAGE;
+	#endif
+
+	EA = 0;
+	
+	TF3H = 0;
+	TF3L = 0;
+
+	EA = 1;
+	#ifdef NO_AUTO_PAGE_STACK
+	SFRPAGE = SFRPAGE_save;
+	#endif
+}
+
+
+/*!\brief Interrupt vector 
  *for the timer2
  *         
  *
@@ -161,6 +185,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	EA = 0;
 	
 	TF2H = 0;
+	TF2L = 0;
 
 	GetRotationalSpeeds();
 

@@ -35,6 +35,15 @@ void Timer_Init()
     TMR2H     = 0xB1;
 }
 
+void Timer_Init3()
+{
+    TMR3CN    = 0x04;
+    TMR3RLL   = 0xE0;
+    TMR3RLH   = 0xB1;
+    TMR3L     = 0xE0;
+    TMR3H     = 0xB1;
+}
+
 void SPI_Init()
 {
     SPI0CFG   = 0x40;
