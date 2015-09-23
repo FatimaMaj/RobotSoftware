@@ -16,6 +16,7 @@
 #include "TrajectoryControl.h"
 #include "PositionControl.h"
 
+
 //-------------------------------------------------------------------
 
 //---External function declarations----------------------------------
@@ -52,18 +53,20 @@ typedef enum Directions{
 
 }Directions;
 
-U8 Testbyte = 0; //for SPI testing
-U8 CommissioningState = SPI_TEST;
-BIT ButtonState = FALSE;
-U8 inputcharacter;                  // Used to store character from UART
-U16 x;
-U16 counter;
+static U8 Testbyte = 0; //for SPI testing
+static U8 CommissioningState = SPI_TEST;
+static BIT ButtonState = FALSE;
+static U8 inputcharacter;                  // Used to store character from UART
+static U16 x;
+static U16 counter;
 
+static States state;
+static Directions direction;
 
-void main (void) {
-	
-	States state = RUNNING;
-	Directions direction = SPINN;
+void main (void) {	
+
+	state = RUNNING;
+	direction = SPINN;
 
 	InitGlobalVariables();
 	InitRotationalSpeedControlVariables();
@@ -87,10 +90,13 @@ void main (void) {
 		if(x==35000)
 			counter+=1;
 
-		if(counter%10==0){
+		if(counter == 200){
 			direction = SOUTH;
-		}else if(counter % 20 ==0){
+			x =0;
+		}else if(counter ==500){
 			direction = NORTH;
+			counter = 0;
+			x =0;
 		}
 
 		switch(state){
@@ -109,11 +115,11 @@ void main (void) {
 						CommissioningState = BACK;
 					//TODO
 					break;
-					case LEFT:
+					case WEST:
 						CommissioningState = LEFT;
 					//TODO
 					break;
-					case RIGHT:
+					case EAST:
 						CommissioningState = RIGHT;
 					//TODO
 					break;
