@@ -1,0 +1,166 @@
+\hypertarget{_kinematics_8h}{}\section{Source/\+Kinematics.h File Reference}
+\label{_kinematics_8h}\index{Source/\+Kinematics.\+h@{Source/\+Kinematics.\+h}}
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}float.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Rotational\+Speed\+Control.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_kinematics_8h_a207fd5507206d307cd63f95374fcd00d}{X}~0
+\item 
+\#define \hyperlink{_kinematics_8h_a798e4073d613ca5ba9618e1b3253df14}{Y}~1
+\item 
+\#define \hyperlink{_kinematics_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}~2
+\item 
+\#define \hyperlink{_kinematics_8h_a18418da302d64ca4de5afe441910cef5}{C\+\_\+11}~0.\+0
+\item 
+\#define \hyperlink{_kinematics_8h_abc48f352da7eb50d5352a315fdfece10}{C\+\_\+12}~1.\+0
+\item 
+\#define \hyperlink{_kinematics_8h_ac28954ce88a91c3d3e7cff9247b6ada4}{C\+\_\+13}~\hyperlink{globals_8h_abf93bb188d64a08a606c9d8aca18dcb8}{R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}
+\item 
+\#define \hyperlink{_kinematics_8h_ab434e96ae834373a2b18911ae2fe8834}{C\+\_\+21}~-\/0.\+86602540378444
+\item 
+\#define \hyperlink{_kinematics_8h_a893227a5ff05ce92bc2dfcefb29b8f38}{C\+\_\+22}~-\/0.\+5
+\item 
+\#define \hyperlink{_kinematics_8h_a479313fe9be8d8c003a0d3a28834d50e}{C\+\_\+23}~\hyperlink{globals_8h_abf93bb188d64a08a606c9d8aca18dcb8}{R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}
+\item 
+\#define \hyperlink{_kinematics_8h_a6d7ae941a906d18c6f4ba4376bad52c2}{C\+\_\+31}~0.\+86602540378444
+\item 
+\#define \hyperlink{_kinematics_8h_a9d0b3e6a6ad1ccfb1d30562ae415d91f}{C\+\_\+32}~-\/0.\+5
+\item 
+\#define \hyperlink{_kinematics_8h_afcfccbb39e4892b703d0aa8466a0b62b}{C\+\_\+33}~\hyperlink{globals_8h_abf93bb188d64a08a606c9d8aca18dcb8}{R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}
+\item 
+\#define \hyperlink{_kinematics_8h_a1f78f7dbcfe01c5e665caeb4f0bb9460}{I\+C\+\_\+11}~0.\+0
+\item 
+\#define \hyperlink{_kinematics_8h_a6b6bbdcf11cd0eae0723692f5235e72b}{I\+C\+\_\+12}~-\/0.\+57735026918963
+\item 
+\#define \hyperlink{_kinematics_8h_ae1efc7973aed064e51f0ec713f74915e}{I\+C\+\_\+13}~0.\+57735026918963
+\item 
+\#define \hyperlink{_kinematics_8h_abe4ccdc424b94e2f89e4bfb9939f01f0}{I\+C\+\_\+21}~0.\+66666666666667
+\item 
+\#define \hyperlink{_kinematics_8h_a7bca5177850e3e1dace54af831092df0}{I\+C\+\_\+22}~-\/0.\+33333333333333
+\item 
+\#define \hyperlink{_kinematics_8h_a832b2f1ca1813fd6c3fe7846e55fff95}{I\+C\+\_\+23}~-\/0.\+33333333333333
+\item 
+\#define \hyperlink{_kinematics_8h_a1d9695955167e2aa65d33a4b43fb1b76}{I\+C\+\_\+31}~0.\+33333333333333 $\ast$ \hyperlink{globals_8h_a5642792abf9cea19bd9fbd38d0cb2cd5}{I\+N\+V\+E\+R\+S\+E\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}
+\item 
+\#define \hyperlink{_kinematics_8h_a6d86f45b505d8f4c7166e27658b8a0ef}{I\+C\+\_\+32}~0.\+33333333333333 $\ast$ \hyperlink{globals_8h_a5642792abf9cea19bd9fbd38d0cb2cd5}{I\+N\+V\+E\+R\+S\+E\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}
+\item 
+\#define \hyperlink{_kinematics_8h_a6b30ac709263e7e185cd8e45218185ad}{I\+C\+\_\+33}~0.\+33333333333333 $\ast$ \hyperlink{globals_8h_a5642792abf9cea19bd9fbd38d0cb2cd5}{I\+N\+V\+E\+R\+S\+E\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_kinematics_8h_a7a366c219731a73f19de9e51fb682475}{Init\+Kinematics\+Variables} (void)
+\item 
+void \hyperlink{_kinematics_8h_a6af740e43cd91885b866127c551fde01}{Direct\+Kinematics} (void)
+\item 
+void \hyperlink{_kinematics_8h_a011ad126121d82f7c2553e9332b1412e}{Inverse\+Kinematics} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+F32 \hyperlink{_kinematics_8h_a750b63cc620f6fe24ad1e7c8928a1859}{Reference\+Global\+Speed} \mbox{[}3\mbox{]}
+\item 
+F32 \hyperlink{_kinematics_8h_a41ccb7862f1609f33b3e7acc8c7833c4}{Position} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_kinematics_8h_a18418da302d64ca4de5afe441910cef5}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+11@{C\+\_\+11}}
+\index{C\+\_\+11@{C\+\_\+11}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+11}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+11~0.\+0}\label{_kinematics_8h_a18418da302d64ca4de5afe441910cef5}
+\hypertarget{_kinematics_8h_abc48f352da7eb50d5352a315fdfece10}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+12@{C\+\_\+12}}
+\index{C\+\_\+12@{C\+\_\+12}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+12}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+12~1.\+0}\label{_kinematics_8h_abc48f352da7eb50d5352a315fdfece10}
+\hypertarget{_kinematics_8h_ac28954ce88a91c3d3e7cff9247b6ada4}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+13@{C\+\_\+13}}
+\index{C\+\_\+13@{C\+\_\+13}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+13}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+13~{\bf R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}}\label{_kinematics_8h_ac28954ce88a91c3d3e7cff9247b6ada4}
+\hypertarget{_kinematics_8h_ab434e96ae834373a2b18911ae2fe8834}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+21@{C\+\_\+21}}
+\index{C\+\_\+21@{C\+\_\+21}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+21}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+21~-\/0.\+86602540378444}\label{_kinematics_8h_ab434e96ae834373a2b18911ae2fe8834}
+\hypertarget{_kinematics_8h_a893227a5ff05ce92bc2dfcefb29b8f38}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+22@{C\+\_\+22}}
+\index{C\+\_\+22@{C\+\_\+22}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+22}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+22~-\/0.\+5}\label{_kinematics_8h_a893227a5ff05ce92bc2dfcefb29b8f38}
+\hypertarget{_kinematics_8h_a479313fe9be8d8c003a0d3a28834d50e}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+23@{C\+\_\+23}}
+\index{C\+\_\+23@{C\+\_\+23}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+23}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+23~{\bf R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}}\label{_kinematics_8h_a479313fe9be8d8c003a0d3a28834d50e}
+\hypertarget{_kinematics_8h_a6d7ae941a906d18c6f4ba4376bad52c2}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+31@{C\+\_\+31}}
+\index{C\+\_\+31@{C\+\_\+31}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+31}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+31~0.\+86602540378444}\label{_kinematics_8h_a6d7ae941a906d18c6f4ba4376bad52c2}
+\hypertarget{_kinematics_8h_a9d0b3e6a6ad1ccfb1d30562ae415d91f}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+32@{C\+\_\+32}}
+\index{C\+\_\+32@{C\+\_\+32}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+32~-\/0.\+5}\label{_kinematics_8h_a9d0b3e6a6ad1ccfb1d30562ae415d91f}
+\hypertarget{_kinematics_8h_afcfccbb39e4892b703d0aa8466a0b62b}{}\index{Kinematics.\+h@{Kinematics.\+h}!C\+\_\+33@{C\+\_\+33}}
+\index{C\+\_\+33@{C\+\_\+33}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{C\+\_\+33}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+\_\+33~{\bf R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}}\label{_kinematics_8h_afcfccbb39e4892b703d0aa8466a0b62b}
+\hypertarget{_kinematics_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{}\index{Kinematics.\+h@{Kinematics.\+h}!G@{G}}
+\index{G@{G}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{G}]{\setlength{\rightskip}{0pt plus 5cm}\#define G~2}\label{_kinematics_8h_aed9ea78689ecce0b7264c02c7f8a9a54}
+\hypertarget{_kinematics_8h_a1f78f7dbcfe01c5e665caeb4f0bb9460}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+11@{I\+C\+\_\+11}}
+\index{I\+C\+\_\+11@{I\+C\+\_\+11}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+11}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+11~0.\+0}\label{_kinematics_8h_a1f78f7dbcfe01c5e665caeb4f0bb9460}
+\hypertarget{_kinematics_8h_a6b6bbdcf11cd0eae0723692f5235e72b}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+12@{I\+C\+\_\+12}}
+\index{I\+C\+\_\+12@{I\+C\+\_\+12}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+12}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+12~-\/0.\+57735026918963}\label{_kinematics_8h_a6b6bbdcf11cd0eae0723692f5235e72b}
+\hypertarget{_kinematics_8h_ae1efc7973aed064e51f0ec713f74915e}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+13@{I\+C\+\_\+13}}
+\index{I\+C\+\_\+13@{I\+C\+\_\+13}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+13}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+13~0.\+57735026918963}\label{_kinematics_8h_ae1efc7973aed064e51f0ec713f74915e}
+\hypertarget{_kinematics_8h_abe4ccdc424b94e2f89e4bfb9939f01f0}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+21@{I\+C\+\_\+21}}
+\index{I\+C\+\_\+21@{I\+C\+\_\+21}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+21}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+21~0.\+66666666666667}\label{_kinematics_8h_abe4ccdc424b94e2f89e4bfb9939f01f0}
+\hypertarget{_kinematics_8h_a7bca5177850e3e1dace54af831092df0}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+22@{I\+C\+\_\+22}}
+\index{I\+C\+\_\+22@{I\+C\+\_\+22}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+22}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+22~-\/0.\+33333333333333}\label{_kinematics_8h_a7bca5177850e3e1dace54af831092df0}
+\hypertarget{_kinematics_8h_a832b2f1ca1813fd6c3fe7846e55fff95}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+23@{I\+C\+\_\+23}}
+\index{I\+C\+\_\+23@{I\+C\+\_\+23}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+23}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+23~-\/0.\+33333333333333}\label{_kinematics_8h_a832b2f1ca1813fd6c3fe7846e55fff95}
+\hypertarget{_kinematics_8h_a1d9695955167e2aa65d33a4b43fb1b76}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+31@{I\+C\+\_\+31}}
+\index{I\+C\+\_\+31@{I\+C\+\_\+31}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+31}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+31~0.\+33333333333333 $\ast$ {\bf I\+N\+V\+E\+R\+S\+E\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}}\label{_kinematics_8h_a1d9695955167e2aa65d33a4b43fb1b76}
+\hypertarget{_kinematics_8h_a6d86f45b505d8f4c7166e27658b8a0ef}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+32@{I\+C\+\_\+32}}
+\index{I\+C\+\_\+32@{I\+C\+\_\+32}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+32~0.\+33333333333333 $\ast$ {\bf I\+N\+V\+E\+R\+S\+E\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}}\label{_kinematics_8h_a6d86f45b505d8f4c7166e27658b8a0ef}
+\hypertarget{_kinematics_8h_a6b30ac709263e7e185cd8e45218185ad}{}\index{Kinematics.\+h@{Kinematics.\+h}!I\+C\+\_\+33@{I\+C\+\_\+33}}
+\index{I\+C\+\_\+33@{I\+C\+\_\+33}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{I\+C\+\_\+33}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+C\+\_\+33~0.\+33333333333333 $\ast$ {\bf I\+N\+V\+E\+R\+S\+E\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+R\+O\+B\+O\+T}}\label{_kinematics_8h_a6b30ac709263e7e185cd8e45218185ad}
+\hypertarget{_kinematics_8h_a207fd5507206d307cd63f95374fcd00d}{}\index{Kinematics.\+h@{Kinematics.\+h}!X@{X}}
+\index{X@{X}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}\#define X~0}\label{_kinematics_8h_a207fd5507206d307cd63f95374fcd00d}
+\hypertarget{_kinematics_8h_a798e4073d613ca5ba9618e1b3253df14}{}\index{Kinematics.\+h@{Kinematics.\+h}!Y@{Y}}
+\index{Y@{Y}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y~1}\label{_kinematics_8h_a798e4073d613ca5ba9618e1b3253df14}
+
+
+\subsection{Function Documentation}
+\hypertarget{_kinematics_8h_a6af740e43cd91885b866127c551fde01}{}\index{Kinematics.\+h@{Kinematics.\+h}!Direct\+Kinematics@{Direct\+Kinematics}}
+\index{Direct\+Kinematics@{Direct\+Kinematics}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{Direct\+Kinematics(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Direct\+Kinematics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_kinematics_8h_a6af740e43cd91885b866127c551fde01}
+\hypertarget{_kinematics_8h_a7a366c219731a73f19de9e51fb682475}{}\index{Kinematics.\+h@{Kinematics.\+h}!Init\+Kinematics\+Variables@{Init\+Kinematics\+Variables}}
+\index{Init\+Kinematics\+Variables@{Init\+Kinematics\+Variables}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{Init\+Kinematics\+Variables(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Init\+Kinematics\+Variables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_kinematics_8h_a7a366c219731a73f19de9e51fb682475}
+\hypertarget{_kinematics_8h_a011ad126121d82f7c2553e9332b1412e}{}\index{Kinematics.\+h@{Kinematics.\+h}!Inverse\+Kinematics@{Inverse\+Kinematics}}
+\index{Inverse\+Kinematics@{Inverse\+Kinematics}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{Inverse\+Kinematics(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Inverse\+Kinematics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_kinematics_8h_a011ad126121d82f7c2553e9332b1412e}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_kinematics_8h_a41ccb7862f1609f33b3e7acc8c7833c4}{}\index{Kinematics.\+h@{Kinematics.\+h}!Position@{Position}}
+\index{Position@{Position}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{Position}]{\setlength{\rightskip}{0pt plus 5cm}F32 Position\mbox{[}3\mbox{]}}\label{_kinematics_8h_a41ccb7862f1609f33b3e7acc8c7833c4}
+\hypertarget{_kinematics_8h_a750b63cc620f6fe24ad1e7c8928a1859}{}\index{Kinematics.\+h@{Kinematics.\+h}!Reference\+Global\+Speed@{Reference\+Global\+Speed}}
+\index{Reference\+Global\+Speed@{Reference\+Global\+Speed}!Kinematics.\+h@{Kinematics.\+h}}
+\subsubsection[{Reference\+Global\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}F32 Reference\+Global\+Speed\mbox{[}3\mbox{]}}\label{_kinematics_8h_a750b63cc620f6fe24ad1e7c8928a1859}

@@ -1,0 +1,80 @@
+\hypertarget{_rotational_speed_control_8h}{}\section{Source/\+Rotational\+Speed\+Control.h File Reference}
+\label{_rotational_speed_control_8h}\index{Source/\+Rotational\+Speed\+Control.\+h@{Source/\+Rotational\+Speed\+Control.\+h}}
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}float.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_rotational_speed_control_8h_afe4be61d10dd9068bae19c0b74dac665}{S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E}~\hyperlink{globals_8h_a774b087ed017f40c00c85059d99e00cc}{T\+I\+M\+E\+R2\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+L}
+\item 
+\#define \hyperlink{_rotational_speed_control_8h_afa268bd67c610557aaa6e9b710a9f7af}{M\+A\+X\+\_\+\+R\+O\+T\+A\+T\+I\+O\+N\+A\+L\+\_\+\+S\+P\+E\+E\+D}~9.\+0
+\item 
+\#define \hyperlink{_rotational_speed_control_8h_a6ecae346ccdfb8028e616a364abb2885}{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+P\+\_\+\+M\+A\+X}~32767
+\item 
+\#define \hyperlink{_rotational_speed_control_8h_a0479a2814caff394064c31ebde9eeb60}{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+N\+\_\+\+M\+A\+X}~-\/32768
+\item 
+\#define \hyperlink{_rotational_speed_control_8h_a391fa1e490bd712720989b58fa0d9904}{P\+W\+M\+\_\+\+M\+A\+X}~0x00
+\item 
+\#define \hyperlink{_rotational_speed_control_8h_a6a06d5e0af804c23442d316bd0b873d6}{P\+W\+M\+\_\+\+M\+I\+N}~0x\+F\+F
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_rotational_speed_control_8h_a2ac1ef9bf53ec5606a4e6887f718b370}{Init\+Rotational\+Speed\+Control\+Variables} (void)
+\item 
+void \hyperlink{_rotational_speed_control_8h_a47fcbd900a2f9272230069421c4955c1}{Rotational\+Speed\+Control} (U8 Motor)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+F32 \hyperlink{_rotational_speed_control_8h_a8c9e940db94b5d999579ba30ae91609c}{Reference\+Rotational\+Speed} \mbox{[}3\mbox{]}
+\item 
+F32 \hyperlink{_rotational_speed_control_8h_ad6de86c85ea286ce310a30686fcdc495}{Measured\+Rotational\+Speed} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_rotational_speed_control_8h_afa268bd67c610557aaa6e9b710a9f7af}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!M\+A\+X\+\_\+\+R\+O\+T\+A\+T\+I\+O\+N\+A\+L\+\_\+\+S\+P\+E\+E\+D@{M\+A\+X\+\_\+\+R\+O\+T\+A\+T\+I\+O\+N\+A\+L\+\_\+\+S\+P\+E\+E\+D}}
+\index{M\+A\+X\+\_\+\+R\+O\+T\+A\+T\+I\+O\+N\+A\+L\+\_\+\+S\+P\+E\+E\+D@{M\+A\+X\+\_\+\+R\+O\+T\+A\+T\+I\+O\+N\+A\+L\+\_\+\+S\+P\+E\+E\+D}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+R\+O\+T\+A\+T\+I\+O\+N\+A\+L\+\_\+\+S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+R\+O\+T\+A\+T\+I\+O\+N\+A\+L\+\_\+\+S\+P\+E\+E\+D~9.\+0}\label{_rotational_speed_control_8h_afa268bd67c610557aaa6e9b710a9f7af}
+\hypertarget{_rotational_speed_control_8h_a391fa1e490bd712720989b58fa0d9904}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!P\+W\+M\+\_\+\+M\+A\+X@{P\+W\+M\+\_\+\+M\+A\+X}}
+\index{P\+W\+M\+\_\+\+M\+A\+X@{P\+W\+M\+\_\+\+M\+A\+X}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{P\+W\+M\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+W\+M\+\_\+\+M\+A\+X~0x00}\label{_rotational_speed_control_8h_a391fa1e490bd712720989b58fa0d9904}
+\hypertarget{_rotational_speed_control_8h_a6a06d5e0af804c23442d316bd0b873d6}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!P\+W\+M\+\_\+\+M\+I\+N@{P\+W\+M\+\_\+\+M\+I\+N}}
+\index{P\+W\+M\+\_\+\+M\+I\+N@{P\+W\+M\+\_\+\+M\+I\+N}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{P\+W\+M\+\_\+\+M\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+W\+M\+\_\+\+M\+I\+N~0x\+F\+F}\label{_rotational_speed_control_8h_a6a06d5e0af804c23442d316bd0b873d6}
+\hypertarget{_rotational_speed_control_8h_afe4be61d10dd9068bae19c0b74dac665}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E@{S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E}}
+\index{S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E@{S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E~{\bf T\+I\+M\+E\+R2\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+L}}\label{_rotational_speed_control_8h_afe4be61d10dd9068bae19c0b74dac665}
+\hypertarget{_rotational_speed_control_8h_a0479a2814caff394064c31ebde9eeb60}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+N\+\_\+\+M\+A\+X@{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+N\+\_\+\+M\+A\+X}}
+\index{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+N\+\_\+\+M\+A\+X@{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+N\+\_\+\+M\+A\+X}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+N\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+N\+\_\+\+M\+A\+X~-\/32768}\label{_rotational_speed_control_8h_a0479a2814caff394064c31ebde9eeb60}
+\hypertarget{_rotational_speed_control_8h_a6ecae346ccdfb8028e616a364abb2885}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+P\+\_\+\+M\+A\+X@{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+P\+\_\+\+M\+A\+X}}
+\index{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+P\+\_\+\+M\+A\+X@{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+P\+\_\+\+M\+A\+X}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+P\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+H\+R\+O\+T\+T\+L\+E\+\_\+\+P\+\_\+\+M\+A\+X~32767}\label{_rotational_speed_control_8h_a6ecae346ccdfb8028e616a364abb2885}
+
+
+\subsection{Function Documentation}
+\hypertarget{_rotational_speed_control_8h_a2ac1ef9bf53ec5606a4e6887f718b370}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!Init\+Rotational\+Speed\+Control\+Variables@{Init\+Rotational\+Speed\+Control\+Variables}}
+\index{Init\+Rotational\+Speed\+Control\+Variables@{Init\+Rotational\+Speed\+Control\+Variables}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{Init\+Rotational\+Speed\+Control\+Variables(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Init\+Rotational\+Speed\+Control\+Variables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_rotational_speed_control_8h_a2ac1ef9bf53ec5606a4e6887f718b370}
+\hypertarget{_rotational_speed_control_8h_a47fcbd900a2f9272230069421c4955c1}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!Rotational\+Speed\+Control@{Rotational\+Speed\+Control}}
+\index{Rotational\+Speed\+Control@{Rotational\+Speed\+Control}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{Rotational\+Speed\+Control(\+U8 Motor)}]{\setlength{\rightskip}{0pt plus 5cm}void Rotational\+Speed\+Control (
+\begin{DoxyParamCaption}
+\item[{U8}]{Motor}
+\end{DoxyParamCaption}
+)}\label{_rotational_speed_control_8h_a47fcbd900a2f9272230069421c4955c1}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_rotational_speed_control_8h_ad6de86c85ea286ce310a30686fcdc495}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!Measured\+Rotational\+Speed@{Measured\+Rotational\+Speed}}
+\index{Measured\+Rotational\+Speed@{Measured\+Rotational\+Speed}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{Measured\+Rotational\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}F32 Measured\+Rotational\+Speed\mbox{[}3\mbox{]}}\label{_rotational_speed_control_8h_ad6de86c85ea286ce310a30686fcdc495}
+\hypertarget{_rotational_speed_control_8h_a8c9e940db94b5d999579ba30ae91609c}{}\index{Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}!Reference\+Rotational\+Speed@{Reference\+Rotational\+Speed}}
+\index{Reference\+Rotational\+Speed@{Reference\+Rotational\+Speed}!Rotational\+Speed\+Control.\+h@{Rotational\+Speed\+Control.\+h}}
+\subsubsection[{Reference\+Rotational\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}F32 Reference\+Rotational\+Speed\mbox{[}3\mbox{]}}\label{_rotational_speed_control_8h_a8c9e940db94b5d999579ba30ae91609c}

@@ -1,10 +1,9 @@
-/********************************************************************
- * 						OmniRobot-Software V2.0						*
- *			Original	:	University of Applied Sciences Trier	*
- *			File 		:	main.c									*
- *																	*
- *******************************************************************/
-
+/*!\file        
+ * \brief
+ * 				OmniRobot-Software V2.0
+ *			Original	:	University of Applied Sciences Trier	
+ *			File 		:	main.c	
+ */
 //---Header files----------------------------------------------------
 #include "compiler_defs.h"	//Compiler Definitions i.e. SDCC, Tasking, Keil
 #include "C8051F580_defs.h"	//µC Library for Generic-Toolchain (Compiler)
@@ -16,6 +15,7 @@
 //#include "Kinematics.h"
 #include "TrajectoryControl.h"
 #include "PositionControl.h"
+
 
 //-------------------------------------------------------------------
 
@@ -34,13 +34,43 @@ U8 _sdcc_external_startup (void)
 #endif
 //-------------------------------------------------------------------
 
-U8 Testbyte = 0; //for SPI testing
-U8 CommissioningState = SPI_TEST;
-BIT ButtonState = FALSE;
-U8 inputcharacter;                  // Used to store character from UART
+typedef enum States{
+	RUNNING,
+	HALT,
+	TEST
 
-void main (void) {
-	
+}States;
+
+typedef enum Directions{
+
+	NORTH,
+	SOUTH,
+	EAST,
+	WEST,
+	SPINN,
+	STILL
+
+}Directions;
+
+static U8 Testbyte = 0; //for SPI testing
+static U8 CommissioningState = SPI_TEST;
+static BIT ButtonState = FALSE;
+static U8 inputcharacter;                  // Used to store character from UART
+
+static States state;
+static Directions direction;
+
+void delay_asm(void){
+__asm
+
+__endasm;
+}
+
+
+void main (void) {	
+
+    state = RUNNING;
+	direction = STILL;
 	InitGlobalVariables();
 	InitRotationalSpeedControlVariables();
 	InitKinematicsVariables();
@@ -48,29 +78,87 @@ void main (void) {
 	InitPositionControlVariables();
 
 
-
+	
    	SFRPAGE = ACTIVE_PAGE;              // Change for PCA0MD and SBUF0
   	PCA0MD &= ~0x40;                    // Disable the watchdog timer
-
 
 	ENABLE = 0;	//Enable H-Bridges
 	NSS4 = 0;	//select SPI slave 4 (C8051F320)
 	LED = 0;	//LED off
-
-
+	//TODO
+	//Should change on timer1 interrupt, with a predefined intervall. 
 	while (1) {
 
-		//TODO add logic :-)
+		switch(state){
+		
+			case RUNNING:
+		
+				switch(direction){
+					
+					case NORTH:
+						CommissioningState = FORWARD;
+						
+					//TODO
+					break;
+					case SOUTH:
+						CommissioningState = BACK;
+						
+					//TODO
+					break;
+					case WEST:
+						CommissioningState = LEFT;
+						
+					//TODO
+					break;
+					case EAST:
+						CommissioningState = RIGHT;
+						
+					//TODO
+					break;
+					case SPINN:
+						CommissioningState = ROTATE;
+						
+					//TODO
+					break;
+					case STILL:
+						CommissioningState = STOP;
+						
+						state = HALT;
+					//TODO
+					break;
+
+					default:
+						CommissioningState = STOP;
+
+				}
+				
+			break;
+
+			case HALT:
+				//TODO
+			break;
+
+			default:
+				state = RUNNING;
+		}
+		
 	}
 /********************************************************************/
 }
 
+/*!\brief Interrupt vector 
+ *for the timer2
+ *         
+ *
+ *  Responsible for checking commissioningState 
+ */
 INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	#ifdef NO_AUTO_PAGE_STACK
 	U8 SFRPAGE_save = SFRPAGE;
 	SFRPAGE = ACTIVE_PAGE;
 	#endif
 
+	EA = 0;
 	
 	TF2H = 0;
 
@@ -160,6 +248,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 		ADC_CHANNEL = CHANNEL_I_MOTOR1;
 		START_AD_CONVERSION;
 	}
+
+	EA = 1;
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
 	#endif
@@ -172,7 +262,7 @@ INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) {
 	U8 SFRPAGE_save = SFRPAGE;
 	SFRPAGE = ACTIVE_PAGE;
 	#endif
-
+	EA = 0;
 	//---Module 0---
 	if (CCF0) { //CapComp Module 0 has triggered the interrupt
 		//If both interrupt flags - CCF0 and CF - are set at this point,
@@ -255,7 +345,7 @@ INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) {
 		PCA0_Overflow++;
 	}
 
-
+	EA = 1;
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
 	#endif
@@ -269,6 +359,7 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 	SFRPAGE = ACTIVE_PAGE;
 	#endif
 	
+	EA = 0;
 	AD0INT = 0;
 
 	switch (ADC_CHANNEL) {
@@ -312,6 +403,7 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 		}
 	}
 
+	EA = 1;
 
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
