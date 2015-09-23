@@ -33,13 +33,37 @@ U8 _sdcc_external_startup (void)
 #endif
 //-------------------------------------------------------------------
 
+typedef enum States{
+	RUNNING,
+	HALT,
+	STILL
+
+}States;
+
+typedef enum Directions{
+
+	NORTH,
+	SOUTH,
+	EAST,
+	WEST,
+	SPINN,
+	NONE
+
+}Directions;
+
 U8 Testbyte = 0; //for SPI testing
 U8 CommissioningState = SPI_TEST;
 BIT ButtonState = FALSE;
 U8 inputcharacter;                  // Used to store character from UART
+U16 x;
+U16 counter;
+
 
 void main (void) {
 	
+	States state = RUNNING;
+	Directions direction = SPINN;
+
 	InitGlobalVariables();
 	InitRotationalSpeedControlVariables();
 	InitKinematicsVariables();
@@ -51,15 +75,72 @@ void main (void) {
    	SFRPAGE = ACTIVE_PAGE;              // Change for PCA0MD and SBUF0
   	PCA0MD &= ~0x40;                    // Disable the watchdog timer
 
-
+	x = 0;
+	counter = 0;
 	ENABLE = 0;	//Enable H-Bridges
 	NSS4 = 0;	//select SPI slave 4 (C8051F320)
 	LED = 0;	//LED off
-
-
+	//TODO
+	//Should change on timer1 interrupt, with a predefined intervall. 
 	while (1) {
+		if(x==35000)
+			counter+=1;
 
-		//TODO add logic :-)
+		if(counter%10==0){
+			direction = SOUTH;
+		}else if(counter % 20 ==0){
+			direction = NORTH;
+		}
+
+		switch(state){
+			case RUNNING:
+			x+=1;
+				
+				
+				
+				switch(direction){
+					
+					case NORTH:
+						CommissioningState = FORWARD;
+					//TODO
+					break;
+					case SOUTH:
+						CommissioningState = BACK;
+					//TODO
+					break;
+					case LEFT:
+						CommissioningState = LEFT;
+					//TODO
+					break;
+					case RIGHT:
+						CommissioningState = RIGHT;
+					//TODO
+					break;
+					case SPINN:
+						CommissioningState = ROTATE;
+					//TODO
+					break;
+					case NONE:
+						CommissioningState = STOP;
+					//TODO
+					break;
+					default:
+					//TODO
+					break;
+				}
+				
+			break;
+
+			case HALT:
+				//TODO
+				state = STILL;
+			break;
+
+			case STILL:
+				break;
+			
+		}
+		
 	}
 /********************************************************************/
 }
@@ -76,6 +157,7 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 	SFRPAGE = ACTIVE_PAGE;
 	#endif
 
+	EA = 0;
 	
 	TF2H = 0;
 
@@ -165,6 +247,8 @@ INTERRUPT(Timer2_ISR, INTERRUPT_TIMER2) {
 		ADC_CHANNEL = CHANNEL_I_MOTOR1;
 		START_AD_CONVERSION;
 	}
+
+	EA = 1;
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
 	#endif
@@ -177,7 +261,7 @@ INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) {
 	U8 SFRPAGE_save = SFRPAGE;
 	SFRPAGE = ACTIVE_PAGE;
 	#endif
-
+	EA = 0;
 	//---Module 0---
 	if (CCF0) { //CapComp Module 0 has triggered the interrupt
 		//If both interrupt flags - CCF0 and CF - are set at this point,
@@ -260,7 +344,7 @@ INTERRUPT(PCA0_ISR, INTERRUPT_PCA0) {
 		PCA0_Overflow++;
 	}
 
-
+	EA = 1;
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
 	#endif
@@ -274,6 +358,7 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 	SFRPAGE = ACTIVE_PAGE;
 	#endif
 	
+	EA = 0;
 	AD0INT = 0;
 
 	switch (ADC_CHANNEL) {
@@ -317,6 +402,7 @@ INTERRUPT (ADC0_ISR, INTERRUPT_ADC0_EOC) {
 		}
 	}
 
+	EA = 1;
 
 	#ifdef NO_AUTO_PAGE_STACK
 	SFRPAGE = SFRPAGE_save;
